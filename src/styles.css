@@ -29,6 +29,7 @@ body {
   color: var(--text);
   font-family: "Inter", sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -58,6 +59,7 @@ textarea {
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at center, black 50%, transparent 90%);
+  animation: gridDrift 26s linear infinite;
 }
 
 .background__glow {
@@ -73,12 +75,14 @@ textarea {
   top: -14rem;
   left: -12rem;
   background: radial-gradient(circle, rgba(7, 71, 153, 0.6), transparent 68%);
+  animation: floatGlowOne 18s ease-in-out infinite;
 }
 
 .background__glow--right {
   right: -12rem;
   bottom: -18rem;
   background: radial-gradient(circle, rgba(0, 153, 144, 0.35), transparent 70%);
+  animation: floatGlowTwo 22s ease-in-out infinite;
 }
 
 .shell {
@@ -104,6 +108,15 @@ textarea {
   background: rgba(13, 14, 19, 0.72);
   backdrop-filter: blur(22px);
   box-shadow: var(--shadow);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.nav:hover {
+  transform: translateY(2px);
+  border-color: rgba(185, 195, 255, 0.2);
 }
 
 .brand,
@@ -145,12 +158,13 @@ textarea {
 .nav-link {
   color: var(--muted);
   font-size: 0.95rem;
-  transition: color 180ms ease;
+  transition: color 180ms ease, opacity 180ms ease, transform 180ms ease;
 }
 
 .nav-link:hover,
 .nav-link.is-active {
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 .nav-link.is-active {
@@ -172,7 +186,10 @@ textarea {
     transform 180ms ease,
     box-shadow 180ms ease,
     background 180ms ease,
-    border-color 180ms ease;
+    border-color 180ms ease,
+    opacity 180ms ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .nav-link--cta,
@@ -191,6 +208,22 @@ textarea {
 .button:hover,
 .nav-link--cta:hover {
   transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(78, 108, 255, 0.24);
+}
+
+.button::after,
+.nav-link--cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.22) 50%, transparent 80%);
+  transform: translateX(-130%);
+  transition: transform 500ms ease;
+}
+
+.button:hover::after,
+.nav-link--cta:hover::after {
+  transform: translateX(130%);
 }
 
 .nav-toggle {
@@ -233,6 +266,7 @@ textarea {
   font-size: clamp(3rem, 7vw, 5.75rem);
   line-height: 0.98;
   letter-spacing: -0.06em;
+  animation: riseIn 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .hero__copy h1 span,
@@ -252,6 +286,17 @@ textarea {
   color: var(--muted);
   font-size: 1.1rem;
 }
+
+.hero__copy .eyebrow,
+.hero__copy .hero__lede,
+.hero__copy .hero__actions {
+  animation: riseIn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.hero__copy .eyebrow { animation-delay: 120ms; }
+.hero__copy h1 { animation-delay: 180ms; }
+.hero__copy .hero__lede { animation-delay: 260ms; }
+.hero__copy .hero__actions { animation-delay: 340ms; }
 
 .hero__actions,
 .tag-row,
@@ -276,11 +321,31 @@ textarea {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow);
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
+}
+
+.feature-card:hover,
+.skill-card:hover,
+.project:hover,
+.placeholder-card:hover,
+.vision-card:hover,
+.contact-card:hover,
+.dossier-card:hover,
+.future-learning:hover,
+.leadership:hover {
+  transform: translateY(-8px);
+  border-color: rgba(101, 217, 206, 0.18);
+  box-shadow: 0 30px 85px rgba(0, 0, 0, 0.42);
 }
 
 .hero__visual {
   min-height: 34rem;
   overflow: hidden;
+  animation: riseIn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both 280ms;
 }
 
 .hero__visual-top,
@@ -348,6 +413,7 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     linear-gradient(135deg, rgba(14, 21, 40, 0.98), rgba(11, 28, 34, 0.95));
+  animation: portraitFloat 8s ease-in-out infinite;
 }
 
 .hero__photo-glow {
@@ -358,6 +424,7 @@ textarea {
   background: radial-gradient(circle, rgba(101, 217, 206, 0.28), transparent 68%);
   filter: blur(40px);
   opacity: 0.8;
+  animation: pulseGlow 6s ease-in-out infinite;
 }
 
 .hero__photo-badge {
@@ -375,6 +442,7 @@ textarea {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   backdrop-filter: blur(10px);
+  animation: badgePulse 4.5s ease-in-out infinite;
 }
 
 .beam {
@@ -566,6 +634,16 @@ textarea {
   padding: 4rem 2rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.quote-panel::after {
+  content: "";
+  position: absolute;
+  inset: auto 42% 1.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  opacity: 0.7;
 }
 
 .quote-mark {
@@ -611,6 +689,7 @@ textarea {
     radial-gradient(circle at center, rgba(101, 217, 206, 0.18), transparent 28%),
     repeating-radial-gradient(circle at center, rgba(101, 217, 206, 0.14) 0 2px, transparent 2px 28px),
     linear-gradient(180deg, rgba(4, 24, 35, 0.9), rgba(18, 19, 24, 0.96));
+  animation: radarSweep 8s linear infinite;
 }
 
 .project__media--code {
@@ -628,6 +707,7 @@ textarea {
     linear-gradient(90deg, rgba(185, 195, 255, 0.07) 1px, transparent 1px);
   background-size: 20px 20px;
   opacity: 0.55;
+  animation: gridDrift 16s linear infinite reverse;
 }
 
 .project__body {
@@ -822,6 +902,7 @@ textarea {
   border-radius: 50%;
   background: var(--teal);
   box-shadow: 0 0 12px rgba(101, 217, 206, 0.7);
+  animation: badgePulse 2.4s ease-in-out infinite;
 }
 
 .contact-layout {
@@ -933,6 +1014,115 @@ textarea {
 .footer__links a {
   color: var(--teal);
   font-size: 0.88rem;
+}
+
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  transition:
+    opacity 720ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--reveal-delay, 0ms),
+    transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatGlowOne {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 5%, 0) scale(1.08);
+  }
+}
+
+@keyframes floatGlowTwo {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-5%, -4%, 0) scale(1.06);
+  }
+}
+
+@keyframes gridDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(24px, 24px, 0);
+  }
+}
+
+@keyframes portraitFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1.01);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.025);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(101, 217, 206, 0);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(101, 217, 206, 0.22);
+  }
+}
+
+@keyframes radarSweep {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 0 0, 48px 48px, 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .motion-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 1024px) {
