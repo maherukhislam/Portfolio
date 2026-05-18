@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { SectionHeading } from "../SectionHeading";
 import { TagRow } from "../TagRow";
 
@@ -15,6 +16,7 @@ export interface ProjectsSectionProps {
       tags: readonly string[];
       mediaClass?: string;
       link?: string;
+      imageUrl?: string;
     }>;
     secondary: readonly Readonly<{
       title: string;
@@ -24,6 +26,7 @@ export interface ProjectsSectionProps {
       variant?: "default" | "teal";
       mediaClass?: string;
       link?: string;
+      imageUrl?: string;
     }>[];
     loadingTitle: string;
     loadingItems: readonly Readonly<{
@@ -32,6 +35,32 @@ export interface ProjectsSectionProps {
       description: string;
     }>[];
   }>;
+}
+
+function ProjectMedia({ imageUrl, mediaClass }: { imageUrl?: string; mediaClass?: string }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!imageUrl) {
+      setIsLoaded(true);
+      return;
+    }
+    const img = new Image();
+    img.src = imageUrl;
+    img.onload = () => {
+      setIsLoaded(true);
+    };
+  }, [imageUrl]);
+
+  const style = imageUrl && isLoaded ? { backgroundImage: `url(${imageUrl})` } : {};
+  const statusClass = imageUrl ? (isLoaded ? "project__media--loaded" : "project__media--loading") : "";
+
+  return (
+    <div
+      className={`project__media ${mediaClass ?? ""} ${statusClass}`}
+      style={style}
+    />
+  );
 }
 
 export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
@@ -45,7 +74,7 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
       />
 
       <article className="project project--featured panel">
-        <div className={`project__media ${data.featured.mediaClass ?? ""}`} />
+        <ProjectMedia imageUrl={data.featured.imageUrl} mediaClass={data.featured.mediaClass} />
         <div className="project__body">
           <TagRow tags={data.featured.tags} tealIndexes={[2]} />
           <h3>
@@ -65,7 +94,9 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
       <div className="project-grid">
         {data.secondary.map((project, index) => (
           <article key={project.title} className="project panel">
-            {project.mediaClass ? <div className={`project__media ${project.mediaClass}`} /> : null}
+            {project.mediaClass ? (
+              <ProjectMedia imageUrl={project.imageUrl} mediaClass={project.mediaClass} />
+            ) : null}
             <div className={`project__body${index === 1 ? " project__body--centered" : ""}`}>
               {index === 1 ? <div className="icon-badge icon-badge--large">&lt;&gt;</div> : null}
               <TagRow tags={project.tags} tealIndexes={project.variant === "teal" ? [0] : []} />

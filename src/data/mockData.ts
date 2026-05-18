@@ -33,6 +33,7 @@ export type ProjectItem = Readonly<{
   variant?: "default" | "teal";
   mediaClass?: string;
   link?: string;
+  imageUrl?: string;
 }>;
 
 export type EducationItem = Readonly<{
@@ -226,6 +227,7 @@ export const portfolioData = {
       tags: ["Branding", "UI/UX", "Technical Implementation"],
       mediaClass: "project__media--radar",
       link: "https://dccnsc.org",
+      imageUrl: "/dccnsc-preview.png",
     } as const satisfies ProjectItem,
     secondary: [
       {
@@ -236,6 +238,7 @@ export const portfolioData = {
           "Problem solved: Manual data aggregation replaced with automated, error-free processing pipelines.",
         tags: ["Process Organization", "Efficiency"],
         mediaClass: "project__media--code",
+        imageUrl: "/finance-preview.png",
       },
       {
         title: "QuantumLeap WordPress Theme",

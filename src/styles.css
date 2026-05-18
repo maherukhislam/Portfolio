@@ -684,6 +684,27 @@ textarea {
 .project__media {
   min-height: 18rem;
   background-color: #111922;
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project__media--loading {
+  opacity: 0.15;
+  filter: blur(8px);
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+.project__media--loaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    background-color: rgba(4, 24, 35, 0.5);
+  }
+  50% {
+    background-color: rgba(101, 217, 206, 0.08);
+  }
 }
 
 .project__media--radar {
