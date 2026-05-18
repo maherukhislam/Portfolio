@@ -114,7 +114,7 @@ export const portfolioData = {
       badge: "Systems & Leadership",
     },
     visualLabel: "Operational Identity",
-    visualText: "Building digital pipelines, local ledger databases, and leading platoon modernization.",
+    visualText: "Building digital pipelines, local ledger databases, and leading modernization.",
   } as const,
   highlights: {
     eyebrow: "Operational Focus",
@@ -146,8 +146,8 @@ export const portfolioData = {
       },
       {
         value: "LCpl Squad",
-        label: "BNCC Squad Command",
-        description: "Cadet Lance Corporal leading drill coordination, emergency readiness, and platoons.",
+        label: "BNCC Squad",
+        description: "Cadet Lance Corporal learning drill coordination, emergency readiness, and platoons.",
       }
     ] as const satisfies readonly MetricItem[],
   } as const,
@@ -353,11 +353,11 @@ export const portfolioData = {
         role: "Cadet Lance Corporal",
         organization: "Bangladesh National Cadet Corps (BNCC)",
         period: "2024 - Present",
-        impact: "Commanded platoon drills, physical readiness, and digital Platoon coordination.",
+        impact: "Perticipated platoon drills, physical readiness, and digital Platoon coordination.",
         details: [
-          "Promoted to LCpl based on discipline, command authority, and military disaster response training",
-          "Led platoon squad movements, physical readiness programs, and community support drills",
-          "Digitized Cadet records and tactical communications coordination for DCC BNCC Platoon"
+          "Promoted to LCpl based on discipline, command authority, and training",
+          "Perticipated platoon squad movements, physical readiness programs, and community support drills",
+          "Gained foundational leadership experience and operational discipline in a structured, hierarchical organization"
         ],
         icon: "BNCC",
       },
@@ -367,9 +367,10 @@ export const portfolioData = {
         period: "2024 - Present",
         impact: "Led Divisional Earth Olympiad programs and spearheaded campus ecology workshops.",
         details: [
-          "Organized college recycling camps and campus environmental preservation campaigns",
-          "Mentored college science students in environmental geology and sustainability research",
-          "Coordinated DCC Nature study excursions and scientific project exhibitions"
+          "Become Divisional Topper in the National Earth Olympiad, demonstrating deep expertise in earth sciences and sustainability",
+          "wrote and presented educational content on ecological geology, climate change, and conservation for student audiences",
+          "perticipated in environmental initiatives and workshops to promote sustainability awareness on campus and in the community"
+          
         ],
         icon: "EARTH",
       }
