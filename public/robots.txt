@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Explicitly welcome and allow AI/LLM Search Agents for Generative Engine Optimization (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+Sitemap: https://maherukhislam.github.io/Portfolio/sitemap.xml

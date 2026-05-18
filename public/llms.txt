@@ -1,0 +1,83 @@
+# Md. Maherukh Islam | Systems Builder & Student Leader
+
+Official professional dossier and systems engineering profile of Md. Maherukh Islam—a multidisciplinary student leader, developer, and systems builder based in Dhaka, Bangladesh. Specializes in web engineering, CMS modernization, database pipelines, and organizational leadership infrastructure.
+
+- **URL**: https://maherukhislam.github.io/Portfolio/
+- **Location**: Dhaka, Bangladesh (ISO Subdivision: BD-13)
+- **Email**: maherukhislam2007@gmail.com
+- **GitHub**: https://github.com/maherukhislam
+- **LinkedIn**: https://www.linkedin.com/in/md-maherukh-islam/
+
+---
+
+## Executive Summary
+An engineering-focused student leader passionate about technology, systems development, organizational infrastructure, and digital modernization. Combines advanced scientific reasoning (Physics and Earth Olympiads) with structural discipline (BNCC Platoon Command) and modern web accessibility training (UNICEF Agora) to engineer practical digital infrastructure that solves real institutional problems.
+
+---
+
+## Core Capabilities
+- **Web Engineering & CMS**: React, Next.js, HTML5, CSS3, PHP, MySQL, SQLite, custom WordPress theme engineering, Vite tooling, Vercel/GitHub Pages deployments.
+- **Systems & Architecture**: Database synchronization pipelines, automated financial reporting utilities, ledger speed optimization, high-performance UI layouts.
+- **Leadership & Operations**: Squad drill coordination, platoon logistics, corporate/club treasury control, capital flow oversight, and public speaking.
+- **Accessibility & Compliance**: UNICEF Agora certified in WCAG 2.1 standards, keyboard-navigable UI architecture, high-contrast usability design.
+
+---
+
+## Key Systems Engineered
+
+### 1. DCCNSC Official Website (dccnsc.org)
+- **Role**: Lead Full-Stack Systems Architect
+- **Problem**: Outdated and fractured web presence for a prominent DCC club, causing communication gaps for 1,000+ student members.
+- **Solution**: Designed and deployed a unified, responsive central club portal at dccnsc.org from scratch.
+- **Impact**: Integrated active directories, automated notices, unified media channels, and maintained sub-1.5s load speeds under strict server guidelines.
+- **Tech Stack**: PHP, Custom CSS, MySQL, Native JavaScript.
+
+### 2. Treasury Financial Reporting System
+- **Role**: Executive Treasurer & Systems Engineer
+- **Problem**: Legacy club ledgers were manual spreadsheets causing auditing latencies of up to 3 days.
+- **Solution**: Engineered a local secure database sync utility and financial ledger processing interface.
+- **Impact**: Reduced ledger audit time from 3 days to under 1 second (<1s) with absolute zero manual balance errors.
+- **Tech Stack**: PHP, SQLite, Custom CSS, Treasury Sync Scripts.
+
+### 3. QuantumLeap Custom WordPress Theme
+- **Role**: Frontend Themes Engineer
+- **Problem**: Traditional WordPress themes are bloated and perform poorly on mobile viewports.
+- **Solution**: Developed a clean, high-speed theme styled purely with responsive utility grids and modern layout mechanics.
+- **Impact**: Reduced standard stylesheet footprint by 80%, achieving near-perfect scores on performance checkers.
+- **Tech Stack**: PHP, WordPress APIs, Semantic HTML5, Tailwind CSS.
+
+---
+
+## Leadership & Service Records
+
+### 1. Cadet Lance Corporal | Bangladesh National Cadet Corps (BNCC)
+- **Period**: 2024 - Present
+- **Impact**: Commanded squad movements, platoon drills, physical readiness programs, and digital Platoon coordination. Promoted based on command presence, discipline, and training efficiency.
+
+### 2. Executive Treasurer | Dhaka Commerce College Nature Study Club (DCCNSC)
+- **Period**: 2024 - Present
+- **Impact**: transition of spreadsheet logs to secure database ledgers; managed cash flows, allocations, and annual operating budgets.
+
+### 3. Environmental Executive | Earth & Nature Initiatives
+- **Period**: 2024 - Present
+- **Impact**: Promoted divisional ecological awareness, led youth workshops, and presented content on conservation and sustainability.
+
+---
+
+## Academic Credentials & Credentials
+
+### Dhaka Commerce College
+- **Degree**: Higher Secondary Certificate (HSC) - Class XII
+- **Period**: 2024 - 2026 (HSC 2026)
+- **Focus**: STEM specialization track emphasizing Higher Mathematics, Physics, Chemistry, and ICT.
+
+### Secondary School Certificate
+- **Degree**: SSC - Science Division
+- **Completed**: 2024
+- **Focus**: Advanced mathematics and logical sciences.
+
+### Verified Accolades
+- **BDOC Physics Olympiad (2025)**: National Finalist, demonstrating high conceptual mathematical and physics reasoning.
+- **National Earth Olympiad (2025)**: Divisional Topper recognition from Bangladesh Youth Environmental Initiative (BYEI) for expertise in geological ecology.
+- **Web Accessibility (UNICEF Agora, 2025)**: Certified in inclusive WCAG web design principles and navigation equity.
+- **Workplace Communication Essentials (P2E Bangladesh, 2025)**: Leadership and collaborative communication certification.
