@@ -3,7 +3,7 @@ import { SectionHeading } from "../SectionHeading";
 const DCCNSC_STRUCTURE = `
   dccnsc.org/
   ├── pages/         (public-facing club portal)
-  │   ├── index.php  (home — notices, YouTube embeds)
+  │   ├── index.php  (home - notices, YouTube embeds)
   │   ├── about.php  (executive committee)
   │   ├── events.php (calendar + gallery)
   │   └── contact.php

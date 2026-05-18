@@ -36,7 +36,7 @@ Currently developing across multiple domains simultaneously:
 
 ### Dhaka Commerce College
 *   **Period:** 2024 – Present (Preparing for HSC 2026)
-*   **Degree:** Higher Secondary Certificate (HSC) — Class XII (Science Division)
+*   **Degree:** Higher Secondary Certificate (HSC) - Class XII (Science Division)
 *   **Focus:** Advanced STEM fields, mathematical reasoning, physics modelling, and logical problem solving.
 
 #### Academic Subject Matriculation:
@@ -75,13 +75,13 @@ Currently developing across multiple domains simultaneously:
 ## │                   LEADERSHIP & TRUST PORTFOLIO                           │
 ## └──────────────────────────────────────────────────────────────────────────┘
 
-### Executive Treasurer — Dhaka Commerce College Nature Study Club (DCCNSC)
+### Executive Treasurer - Dhaka Commerce College Nature Study Club (DCCNSC)
 *   **Scope:** Operations management, financial planning, and the modernization of digital brand systems.
 *   **Key Technological Contributions:**
     *   **Official Website [dccnsc.org](https://dccnsc.org):** Architected the club's new web portal, creating custom brand experiences, information layouts, and public resources.
     *   **Financial Reporting Engine:** Engineered an automated workflow system to process club transaction journals, ledger tracking, and membership subscriptions, replacing prone-to-error paper records.
 
-### Cadet Lance Corporal — Bangladesh National Cadet Corps (BNCC)
+### Cadet Lance Corporal - Bangladesh National Cadet Corps (BNCC)
 *   **Scope:** Tactical command structure, teamwork facilitation, strict military discipline, physical/mental endurance, and chain-of-command experience.
 *   **Strategic Relevance:** Tactical leadership and systemic command skills directly preparing for ISSB and future digital command roles in national infrastructure.
 

@@ -124,7 +124,7 @@ export const portfolioData = {
     title: "Md. Maherukh Islam",
     highlightedText: "Maherukh Islam",
     description:
-      "Student engineer building real digital infrastructure for organizations — web systems, treasury tooling, and accessible interfaces grounded in operational discipline and structured technical practice.",
+      "Student engineer building real digital infrastructure for organizations - web systems, treasury tooling, and accessible interfaces grounded in operational discipline and structured technical practice.",
     primaryAction: { href: "#projects", label: "View Case Studies" },
     secondaryAction: { href: "#achievements", label: "View Credentials" },
     photo: {
@@ -157,17 +157,17 @@ export const portfolioData = {
       {
         value: "316",
         label: "DCCNSC Production Deploys",
-        description: "Versioned production deployments of the official club portal — CI/CD-backed institutional infrastructure serving 120+ active members.",
+        description: "Versioned production deployments of the official club portal - CI/CD-backed institutional infrastructure serving 120+ active members.",
       },
       {
         value: "144",
         label: "Finance System Releases",
-        description: "Production releases of the DCC Nature Study Club Financial Management System at finance.dccnsc.org — active treasury infrastructure.",
+        description: "Production releases of the DCC Nature Study Club Financial Management System at finance.dccnsc.org - active treasury infrastructure.",
       },
       {
         value: "LCpl",
         label: "BNCC Rank",
-        description: "Promoted to Cadet Lance Corporal in Bangladesh National Cadet Corps — structured command discipline and operational leadership.",
+        description: "Promoted to Cadet Lance Corporal in Bangladesh National Cadet Corps - structured command discipline and operational leadership.",
       }
     ] as const satisfies readonly MetricItem[],
   } as const,
@@ -177,7 +177,7 @@ export const portfolioData = {
     title: "Systems leadership.",
     highlightedText: "Built through evidence.",
     description:
-      "My work sits at the intersection of technical implementation, organizational systems, and operational responsibility. I build infrastructure that makes institutions more legible, more efficient, and more useful — grounded in real deployments and structured practice.",
+      "My work sits at the intersection of technical implementation, organizational systems, and operational responsibility. I build infrastructure that makes institutions more legible, more efficient, and more useful - grounded in real deployments and structured practice.",
     narrativeTitle: "The Narrative",
     timeline: [
       {
@@ -275,7 +275,7 @@ export const portfolioData = {
       {
         title: "Financial Reporting System",
         description:
-          "A full-stack treasury management platform engineered from direct treasurer experience — structured financial data processing, audit tooling, and secure operational reporting at finance.dccnsc.org.",
+          "A full-stack treasury management platform engineered from direct treasurer experience - structured financial data processing, audit tooling, and secure operational reporting at finance.dccnsc.org.",
         tags: ["Process Organization", "Efficiency"],
         mediaClass: "project__media--code",
         imageUrl: "/finance-preview.png",
@@ -283,7 +283,7 @@ export const portfolioData = {
         caseStudy: {
           problem: "Club treasury ledgers were physical or basic spreadsheet files, causing data delays and auditing latencies of up to 3 days.",
           role: "Executive Treasurer & Systems Engineer",
-          solution: "Built a full-stack treasury platform with Python data pipelines, PostgreSQL backend, and TypeScript frontend — deployed with 144 production releases.",
+          solution: "Built a full-stack treasury platform with Python data pipelines, PostgreSQL backend, and TypeScript frontend - deployed with 144 production releases.",
           impact: "Eliminated manual ledger errors entirely; reduced institutional financial statement audit duration from 3 days to under 1 second.",
           technologies: ["TypeScript", "JavaScript", "Python", "PLpgSQL / PostgreSQL", "CSS", "Shell Scripts"],
           challenges: "Ensuring the interface layout is highly intuitive so that future student treasurers can manage sync operations without database training.",
@@ -394,7 +394,7 @@ export const portfolioData = {
         metaTone: "blue",
       },
       {
-        title: "Manifesto Talk — Youth, Environment & Climate",
+        title: "Manifesto Talk - Youth, Environment & Climate",
         meta: "Discussion Forum / May 31, 2025",
         description:
           "Participated in discussions alongside representatives connected to the interim government at the Department of Environment, focusing on climate innovation, sustainability policies, and active youth leadership.",
@@ -417,10 +417,10 @@ export const portfolioData = {
         role: "Cadet Lance Corporal",
         organization: "Bangladesh National Cadet Corps (BNCC)",
         period: "2024 - Present",
-        impact: "Perticipated platoon drills, physical readiness, and digital Platoon coordination.",
+        impact: "Participated in platoon drills, physical readiness, and digital platoon coordination.",
         details: [
           "Promoted to LCpl based on discipline, command authority, and training",
-          "Perticipated platoon squad movements, physical readiness programs, and community support drills",
+          "Participated in platoon squad movements, physical readiness programs, and community support drills",
           "Gained foundational leadership experience and operational discipline in a structured, hierarchical organization"
         ],
         icon: "BNCC",
@@ -431,9 +431,9 @@ export const portfolioData = {
         period: "2024 - Present",
         impact: "Led Divisional Earth Olympiad programs and spearheaded campus ecology workshops.",
         details: [
-          "Become Divisional Topper in the National Earth Olympiad, demonstrating deep expertise in earth sciences and sustainability",
-          "wrote and presented educational content on ecological geology, climate change, and conservation for student audiences",
-          "perticipated in environmental initiatives and workshops to promote sustainability awareness on campus and in the community"
+          "Became Divisional Topper in the National Earth Olympiad, demonstrating deep expertise in earth sciences and sustainability",
+          "Wrote and presented educational content on ecological geology, climate change, and conservation for student audiences",
+          "Participated in environmental initiatives and workshops to promote sustainability awareness on campus and in the community"
         ],
         icon: "EARTH",
       },
@@ -540,13 +540,13 @@ export const portfolioData = {
     { date: "2024", event: "Enrolled in BNCC Cadet Program", category: "Military", tone: "teal" },
     { date: "2024", event: "Appointed Executive Treasurer, DCC Nature Study Club", category: "Leadership", tone: "primary" },
     { date: "Dec 2024", event: "UNICEF Web Accessibility Certification (ID: wQE5kUfwA)", category: "Engineering", tone: "teal" },
-    { date: "Dec 2024", event: "Bijoy Quiz — University of Dhaka (Victory Day)", category: "Academic", tone: "primary" },
+    { date: "Dec 2024", event: "Bijoy Quiz - University of Dhaka (Victory Day)", category: "Academic", tone: "primary" },
     { date: "2025", event: "Physics Olympiad National Finalist (BDOC)", category: "Science", tone: "teal" },
-    { date: "May 2025", event: "ECO Spark Challenge 1.0 — 1st Place Winner", category: "Environment", tone: "primary" },
-    { date: "May 18–19, 2025", event: "DCC CSE Fest IT Quiz — 2nd Place (DCCPS)", category: "Engineering", tone: "teal" },
+    { date: "May 2025", event: "ECO Spark Challenge 1.0 - 1st Place Winner", category: "Environment", tone: "primary" },
+    { date: "May 18–19, 2025", event: "DCC CSE Fest IT Quiz - 2nd Place (DCCPS)", category: "Engineering", tone: "teal" },
     { date: "May 30, 2025", event: "APAC Cyber Hygiene Training (Google.org / SAJIDA Foundation)", category: "Training", tone: "primary" },
-    { date: "May 31, 2025", event: "Youth & Climate Manifesto Forum — Dept. of Environment", category: "Civic", tone: "teal" },
-    { date: "Jun 15, 2025", event: "Workplace Communication — UNICEF Passport to Earning BD", category: "Training", tone: "primary" },
+    { date: "May 31, 2025", event: "Youth & Climate Manifesto Forum - Dept. of Environment", category: "Civic", tone: "teal" },
+    { date: "Jun 15, 2025", event: "Workplace Communication - UNICEF Passport to Earning BD", category: "Training", tone: "primary" },
     { date: "Jul 2025", event: "Earth Olympiad Divisional Topper (BYEI ID: 16353)", category: "Science", tone: "teal" },
     { date: "2025", event: "Promoted to Cadet Lance Corporal (BNCC)", category: "Military", tone: "primary" },
     { date: "Nov 5–11, 2025", event: "DCC 34th Annual Cultural Competition Volunteer", category: "Leadership", tone: "teal" },
@@ -555,19 +555,19 @@ export const portfolioData = {
     {
       title: "How I Structured Treasury Reporting",
       date: "2025-05",
-      excerpt: "Moving from physical ledgers to a Python + PLpgSQL sync pipeline — designing for future treasurers with no database training.",
+      excerpt: "Moving from physical ledgers to a Python + PLpgSQL sync pipeline - designing for future treasurers with no database training.",
       tags: ["Treasury", "PLpgSQL", "Systems Design"],
     },
     {
       title: "Improving Accessibility Focus Systems",
       date: "2024-12",
-      excerpt: "Applying UNICEF Agora training to real portals — keyboard navigation patterns, focus ring design, and semantic landmark structure.",
+      excerpt: "Applying UNICEF Agora training to real portals - keyboard navigation patterns, focus ring design, and semantic landmark structure.",
       tags: ["Accessibility", "Frontend", "WCAG"],
     },
     {
       title: "Lessons from Organizational Infrastructure",
       date: "2025-03",
-      excerpt: "Building dccnsc.org — balancing admin usability, content management, and institutional trust signals in a live club portal.",
+      excerpt: "Building dccnsc.org - balancing admin usability, content management, and institutional trust signals in a live club portal.",
       tags: ["WordPress", "CMS", "Systems Thinking"],
     },
   ] as const satisfies readonly EngineeringNote[],

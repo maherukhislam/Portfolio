@@ -2,7 +2,7 @@ const PRINCIPLES = [
   {
     key: "KBD",
     title: "Keyboard Navigation",
-    desc: "Full site navigable without a pointer device — tab order, focus traps, and skip links implemented.",
+    desc: "Full site navigable without a pointer device - tab order, focus traps, and skip links implemented.",
   },
   {
     key: "FOC",

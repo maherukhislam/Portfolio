@@ -31,7 +31,7 @@ export function OperationalTimelineSection({
         </h2>
         <p>
           A chronological record of appointments, certifications, competitions,
-          and civic engagements — grounded in verifiable milestones.
+          and civic engagements - grounded in verifiable milestones.
         </p>
       </div>
 

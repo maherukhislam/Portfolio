@@ -37,7 +37,7 @@ export function HighlightsSection({ data }: Readonly<HighlightsSectionProps>) {
               <ul style={{ margin: 0, paddingLeft: "1.15rem", display: "flex", flexDirection: "column", gap: "0.45rem" }}>
                 <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>Physics Olympiad National Finalist</li>
                 <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>Earth Olympiad Divisional Topper (Participation ID: 16353)</li>
-                <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>ECO Spark Challenge 1.0 — 1st Place Winner</li>
+                <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>ECO Spark Challenge 1.0 - 1st Place Winner</li>
                 <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>DCC Intra College CSE Fest IT Quiz (2nd Place)</li>
                 <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>APAC Cyber Hygiene Training Graduate (SAJIDA Foundation &amp; Google.org)</li>
                 <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>Web Accessibility Certified Developer (UNICEF Agora ID: wQE5kUfwA)</li>
