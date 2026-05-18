@@ -2,33 +2,33 @@ import { SectionHeading } from "../SectionHeading";
 
 const DCCNSC_STRUCTURE = `
   dccnsc.org/
-  ├── pages/         (public-facing club portal)
-  │   ├── index.php  (home - notices, YouTube embeds)
-  │   ├── about.php  (executive committee)
-  │   ├── events.php (calendar + gallery)
-  │   └── contact.php
-  ├── admin/         (operational backend)
-  │   ├── dashboard  (member records)
-  │   ├── treasury/  → finance.dccnsc.org
-  │   └── notices/   (publish system)
-  └── api/           (PHP + PLpgSQL endpoints)
+  ├── database/      (Supabase PostgreSQL + RLS)
+  │   └── required_tables.sql
+  ├── functions/     (Cloudflare Pages Edge APIs)
+  │   ├── _middleware.js  (CORS, security, context)
+  │   └── api/       (blog, gallery, memberships)
+  └── src/           (React 18 + Vite SPA)
+      ├── components/(Navbar, Crop Dialog, UI)
+      ├── lib/       (Hooks: useAuth, SEO, Preload)
+      └── pages/
+          └── admin/ (Secured workspace modules)
 `.trim();
 
 const FINANCE_FLOW = `
-  [Treasurer Terminal]
+  [React 19 + Zustand UI] ──► (CSRF + HttpOnly)
         │
-        ├── Read ledger / transaction CSV
+        ├── shared/financials.js (Parity Engine)
         ▼
-  [Python Data Pipeline]  ──► Parse + validate
+  [Cloudflare Functions]  ──► RBAC / Rate Limit
         │
-        ├── Encode structured payload
+        ├── Transaction & Export APIs
         ▼
-  [PLpgSQL / PostgreSQL]  ──► Query Speed: < 0.001s
+  [Supabase PostgreSQL]   ──► RLS Policies
         │
-        ├── Sync over HTTPS / SSL
+        ├── Signed Receipts in R2
         ▼
   [finance.dccnsc.org]    ──► State: ONLINE
-  144 production releases · TypeScript + Python
+  144 production releases · Serverless API
 `.trim();
 
 export function TechShowcaseSection() {
@@ -55,7 +55,7 @@ export function TechShowcaseSection() {
           </div>
           <pre className="pipeline-terminal__diagram">{DCCNSC_STRUCTURE}</pre>
           <div className="pipeline-terminal__footer">
-            <span className="hl">TypeScript · PHP · Python · PLpgSQL · CSS</span>
+            <span className="hl">React · TypeScript · Cloudflare Edge · Supabase PostgreSQL</span>
           </div>
         </div>
 
@@ -69,7 +69,7 @@ export function TechShowcaseSection() {
           </div>
           <pre className="pipeline-terminal__diagram">{FINANCE_FLOW}</pre>
           <div className="pipeline-terminal__footer">
-            <span className="hl">Python · PLpgSQL · TypeScript · JavaScript · Shell</span>
+            <span className="hl">React 19 · Zustand · Cloudflare Functions · Supabase</span>
           </div>
         </div>
       </div>
@@ -87,8 +87,8 @@ export function TechShowcaseSection() {
         </div>
         <div className="deploy-stat__divider" />
         <div className="deploy-stat">
-          <span className="deploy-stat__value">5</span>
-          <span className="deploy-stat__label">languages in production</span>
+          <span className="deploy-stat__value">4</span>
+          <span className="deploy-stat__label">core databases synced</span>
         </div>
         <div className="deploy-stat__divider" />
         <div className="deploy-stat">
