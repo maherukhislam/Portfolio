@@ -32,6 +32,16 @@ export type ProjectItem = Readonly<{
   tags: readonly string[];
   variant?: "default" | "teal";
   mediaClass?: string;
+  link?: string;
+}>;
+
+export type EducationItem = Readonly<{
+  institution: string;
+  period: string;
+  degree: string;
+  focus: string;
+  subjects: readonly string[];
+  icon: string;
 }>;
 
 export type AwardItem = Readonly<{
@@ -57,6 +67,7 @@ export type ContactLink = Readonly<{
 export const portfolioData = {
   navigation: [
     { href: "#projects", label: "Projects" },
+    { href: "#education", label: "Education" },
     { href: "#achievements", label: "Achievements" },
     { href: "#skills", label: "Skills" },
     { href: "#vision", label: "Vision" },
@@ -170,6 +181,35 @@ export const portfolioData = {
       },
     ] as const satisfies readonly CardItem[],
   } as const,
+  education: {
+    id: "education",
+    title: "Educational Journey",
+    highlightedText: "Journey",
+    description: "Academic profile, subjects studied, and core areas of STEM-oriented reasoning and analytical focus.",
+    items: [
+      {
+        institution: "Dhaka Commerce College",
+        period: "2024 - Present (HSC 2026)",
+        degree: "Higher Secondary Certificate (HSC) - Class XII",
+        focus: "Preparing for HSC 2026 with an academic track leaning strongly toward physics, mathematics, and technology-oriented systems.",
+        subjects: ["Higher Math", "Physics", "Chemistry", "Biology", "ICT", "English", "Bangla"],
+        icon: "DCC",
+      },
+      {
+        institution: "Secondary School Certificate",
+        period: "Completed 2024 (SSC)",
+        degree: "Secondary School Certificate - Science Division",
+        focus: "Completed secondary education with strong foundations in mathematics and logical analysis.",
+        subjects: ["General Science", "Higher Math", "ICT", "Physics", "Chemistry", "Biology"],
+        icon: "SSC",
+      }
+    ] as const satisfies readonly EducationItem[],
+    academicInterests: {
+      title: "STEM & Analytical Focus",
+      description: "My academic interests strongly center on STEM fields, engineering, analytical reasoning, and technology-oriented problem solving. I treat academic learning not just as memorization, but as the conceptual framework for building physical and digital tools.",
+      tags: ["STEM", "Engineering", "Analytical Reasoning", "Systems Thinking", "Technology"],
+    } as const,
+  } as const,
   projects: {
     id: "projects",
     eyebrow: "Portfolio",
@@ -178,18 +218,19 @@ export const portfolioData = {
     description:
       "A curated selection of technical and organizational systems built to modernize information, reduce manual friction, and improve institutional workflows.",
     featured: {
-      title: "DCCNSC Website",
+      title: "DCCNSC Official Website",
       description:
         "A comprehensive digital overhaul for the Dhaka Commerce College Nature Study Club, connecting environmental work, club identity, and accessible information architecture.",
       problem:
-        "Problem solved: Outdated information architecture and fractured brand identity unified into a seamless digital experience.",
+        "Problem solved: Outdated information architecture and fractured brand identity unified into a seamless digital experience at dccnsc.org.",
       tags: ["Branding", "UI/UX", "Technical Implementation"],
       mediaClass: "project__media--radar",
+      link: "https://dccnsc.org",
     } as const satisfies ProjectItem,
     secondary: [
       {
-      title: "Financial Reporting System",
-      description:
+        title: "Financial Reporting System",
+        description:
           "An internal tool engineered from treasury experience to streamline financial data processing, reduce reporting friction, and make organizational finance easier to manage.",
         problem:
           "Problem solved: Manual data aggregation replaced with automated, error-free processing pipelines.",
@@ -197,9 +238,9 @@ export const portfolioData = {
         mediaClass: "project__media--code",
       },
       {
-        title: "QuantumLeap Theme",
+        title: "QuantumLeap WordPress Theme",
         description:
-          "A highly optimized WordPress theme built entirely on modern utility-first CSS principles, delivering perfect Lighthouse scores and uncompromised developer experience.",
+          "A highly optimized custom WordPress theme built entirely on modern utility-first CSS principles, featuring dedicated hero sections, a blogging engine, experiments showcase, and a slick Tailwind-based frontend structure.",
         problem:
           "Problem solved: Heavy, slow legacy themes replaced with a lightning-fast, highly customizable modern framework.",
         tags: ["Tailwind CSS", "Frontend Engineering", "WordPress"],
@@ -225,14 +266,14 @@ export const portfolioData = {
         title: "BDOC Physics Olympiad",
         meta: "Finalist / 2025",
         description:
-          "Recognized as a finalist, reflecting strong conceptual reasoning, mathematical thinking, persistence, and competitive academic engagement.",
+          "National-level finalist, indicating strong conceptual understanding, mathematical reasoning, persistence under competition, and scientific aptitude.",
       },
       {
         icon: "EAR",
         title: "National Earth Olympiad",
         meta: "Divisional Topper / 2025",
         description:
-          "Selected as a divisional topper for participation by the Bangladesh Youth Environmental Initiative, strengthening a profile of environmental literacy and science-driven thinking.",
+          "Selected as a Divisional Topper by the Bangladesh Youth Environmental Initiative (BYEI), reflecting environmental awareness, scientific engagement, and interdisciplinary academic recognition.",
         metaTone: "blue",
       },
     ] as const satisfies readonly AwardItem[],
@@ -241,22 +282,22 @@ export const portfolioData = {
         title: "Web Accessibility Training",
         meta: "UNICEF / Agora",
         description:
-          "Training in inclusive digital design, usability, and responsible technology development, adding a professional accessibility mindset to web development work.",
+          "Training in inclusive digital design, accessibility standards (WCAG), and ethical, user-centered technology development.",
         metaTone: "blue",
       },
       {
-        title: "Workplace Communication",
+        title: "Workplace Communication Essentials",
         meta: "Passport to Earning Bangladesh",
         description:
-          "Professional development focused on communication, workplace readiness, collaboration, and leadership-oriented self-development.",
+          "Completed professional readiness training focused on leadership communication, workplace readiness, collaboration, and executive presence.",
       },
     ] as const satisfies readonly AwardItem[],
     leadership: {
-      eyebrow: "Extracurricular",
+      eyebrow: "Extracurricular & Trust",
       title: "Bangladesh National Cadet Corps (BNCC)",
       description:
-        "Served as a Cadet Lance Corporal, building discipline, structured teamwork, leadership training, chain-of-command experience, and organizational adaptability.",
-      tags: ["Cadet Lance Corporal", "Discipline", "Service"],
+        "Promoted to Cadet Lance Corporal, building discipline, physical and mental endurance, leadership under a structured chain-of-command, and organizational adaptability.",
+      tags: ["Cadet Lance Corporal", "Discipline", "Leadership", "Service"],
     } as const,
   } as const,
   skills: {
@@ -265,15 +306,15 @@ export const portfolioData = {
     description:
       "A practical capability map across development, design, systems thinking, communication, and the deeper technical specialization I am building next.",
     groups: [
-      { icon: "</>", title: "Development", items: ["HTML & CSS", "PHP", "Tailwind CSS", "WordPress CMS", "React", "Next.js"] },
-      { icon: "UX", title: "Design", items: ["UI/UX", "Branding Systems", "Cinematic Presentation", "Storytelling"] },
-      { icon: "SYS", title: "Systems & Thinking", items: ["Systems Thinking", "Builder Mentality", "Mission-Oriented", "Financial workflows", "Accessibility"] },
+      { icon: "</>", title: "Web Engineering & CMS", items: ["Tailwind CSS", "HTML & CSS", "PHP & XAMPP", "WordPress Theme Dev", "CMS Customization", "Vercel Deployments", "React & Next.js"] },
+      { icon: "UX", title: "Creative & Copy", items: ["UI/UX Design", "Branding Systems", "Cinematic Presentation", "Immersive UX", "Workplace Communication", "Authentic Writing"] },
+      { icon: "SYS", title: "Systems & Leadership", items: ["Systems Thinking", "Builder Mentality", "Club Treasury Control", "Financial Reporting Systems", "UNICEF Accessibility", "BNCC Command Experience"] },
     ] as const satisfies readonly SkillGroup[],
     futureLearning: {
       icon: "AI",
       title: "Future Specialization",
       description: "Deepening technical specialization after building a broad interdisciplinary foundation.",
-      tags: ["AI Systems", "Cybersecurity", "Mathematics", "Software Architecture", "Computer Science"],
+      tags: ["AI Systems", "Software Architecture", "Cybersecurity", "Computer Science", "Advanced Math"],
     } as const,
   } as const,
   vision: {
@@ -285,15 +326,15 @@ export const portfolioData = {
       "Building the future requires more than elegant code. It demands scientific reasoning, communication, accessibility, environmental awareness, and the discipline to turn ideas into working infrastructure.",
     cards: [
       {
-        title: "Engineering for Scale & Humanity",
+        title: "Engineering for Scale & Modernization",
         description:
-          "True innovation sits where robust architecture, inclusive design, and organizational usefulness meet. Every product is a living system that must scale while remaining understandable to the people it serves.",
-        tags: ["Systemic Design", "Inclusive Access", "Institutional Impact"],
+          "Aspiring to become an engineer and inventor, contributing technological innovations to Bangladesh, modernizing institutions through AI, and potentially contributing to military digitalization.",
+        tags: ["Systems Engineering", "AI Modernization", "Institutional Impact"],
       },
       {
         icon: "CLN",
         title: "Deep Technical Growth",
-        description: "Building stronger foundations in programming, mathematics, AI systems, cybersecurity, and software architecture.",
+        description: "Preparing for ISSB after HSC and pursuing engineering university admissions, focusing on AI systems, cybersecurity, advanced math, and computer science fundamentals.",
       },
       {
         icon: "GLB",

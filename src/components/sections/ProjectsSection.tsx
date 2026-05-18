@@ -14,6 +14,7 @@ export interface ProjectsSectionProps {
       problem: string;
       tags: readonly string[];
       mediaClass?: string;
+      link?: string;
     }>;
     secondary: readonly Readonly<{
       title: string;
@@ -22,6 +23,7 @@ export interface ProjectsSectionProps {
       tags: readonly string[];
       variant?: "default" | "teal";
       mediaClass?: string;
+      link?: string;
     }>[];
     loadingTitle: string;
     loadingItems: readonly Readonly<{
@@ -46,7 +48,15 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
         <div className={`project__media ${data.featured.mediaClass ?? ""}`} />
         <div className="project__body">
           <TagRow tags={data.featured.tags} tealIndexes={[2]} />
-          <h3>{data.featured.title}</h3>
+          <h3>
+            {data.featured.link ? (
+              <a href={data.featured.link} target="_blank" rel="noopener noreferrer" className="project__link-hover">
+                {data.featured.title} <span className="project__link-arrow">↗</span>
+              </a>
+            ) : (
+              data.featured.title
+            )}
+          </h3>
           <p>{data.featured.description}</p>
           <p className="project__problem">{data.featured.problem}</p>
         </div>
@@ -59,7 +69,15 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
             <div className={`project__body${index === 1 ? " project__body--centered" : ""}`}>
               {index === 1 ? <div className="icon-badge icon-badge--large">&lt;&gt;</div> : null}
               <TagRow tags={project.tags} tealIndexes={project.variant === "teal" ? [0] : []} />
-              <h3>{project.title}</h3>
+              <h3>
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__link-hover">
+                    {project.title} <span className="project__link-arrow">↗</span>
+                  </a>
+                ) : (
+                  project.title
+                )}
+              </h3>
               <p>{project.description}</p>
               <p className="project__problem">{project.problem}</p>
             </div>

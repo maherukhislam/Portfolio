@@ -1128,12 +1128,120 @@ textarea {
   }
 }
 
+/* ==========================================================================
+   Project Link Hover & Micro-Animations
+   ========================================================================== */
+.project__link-hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 200ms ease;
+}
+
+.project__link-hover:hover {
+  color: var(--teal);
+}
+
+.project__link-arrow {
+  display: inline-block;
+  font-size: 0.85em;
+  transition: transform 200ms ease;
+}
+
+.project__link-hover:hover .project__link-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* ==========================================================================
+   Education Section & Academic Layout
+   ========================================================================== */
+.education__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+}
+
+.education__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-card {
+  padding: 2.5rem;
+}
+
+.education-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-card__header h3 {
+  margin: 0.25rem 0;
+  font-size: 1.8rem;
+  font-family: "Sora", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.education-card__degree {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.education-card__body p {
+  color: var(--muted);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.education-card__subjects-label {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.academic-interests {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: fit-content;
+}
+
+.academic-interests__title {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.academic-interests__title h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: "Sora", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.academic-interests p {
+  color: var(--muted);
+  margin: 0;
+}
+
 @media (max-width: 1024px) {
   .hero,
   .about__hero,
   .project-grid,
   .contact-layout,
-  .leadership {
+  .leadership,
+  .education__grid {
     grid-template-columns: 1fr;
   }
 
