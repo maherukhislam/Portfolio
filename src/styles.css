@@ -3,19 +3,14 @@
   --surface: #121318;
   --surface-2: rgba(18, 19, 24, 0.72);
   --surface-3: rgba(31, 31, 37, 0.8);
-  --surface-4: #1b1b21;
   --text: #f4f2f8;
   --muted: #b6b7c6;
-  --subtle: #8f909c;
   --line: rgba(255, 255, 255, 0.1);
   --line-soft: rgba(255, 255, 255, 0.06);
   --primary: #b9c3ff;
-  --primary-strong: #7d92ff;
   --teal: #65d9ce;
-  --teal-strong: #109d94;
   --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
   --radius: 24px;
-  --radius-lg: 32px;
   --container: 1200px;
 }
 
@@ -34,11 +29,6 @@ body {
   color: var(--text);
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }
 
 a {
@@ -117,10 +107,29 @@ textarea {
 }
 
 .brand,
-.site-footer h2 {
+.site-footer h2,
+.hero__copy h1,
+.about__hero h2,
+.section-heading h2,
+.manifesto h2,
+.contact .section-heading h2,
+.timeline__content h4,
+.section-heading h3,
+.subheading h3,
+.project h3,
+.feature-card h3,
+.feature-card h4,
+.skill-card h3,
+.vision-card h3,
+.contact-card h3,
+.dossier-card h3 {
   font-family: "Sora", sans-serif;
-  font-weight: 700;
   letter-spacing: -0.04em;
+}
+
+.brand,
+.site-footer h2 {
+  font-weight: 700;
 }
 
 .brand {
@@ -221,7 +230,6 @@ textarea {
 .manifesto h2,
 .contact .section-heading h2 {
   margin: 0;
-  font-family: "Sora", sans-serif;
   font-size: clamp(3rem, 7vw, 5.75rem);
   line-height: 0.98;
   letter-spacing: -0.06em;
@@ -237,7 +245,8 @@ textarea {
 .section-heading p,
 .about__hero p,
 .manifesto__support,
-.contact .section-heading p {
+.contact .section-heading p,
+.future-learning p {
   max-width: 42rem;
   margin-top: 1.5rem;
   color: var(--muted);
@@ -348,23 +357,9 @@ textarea {
   font-size: clamp(2.5rem, 6vw, 4.75rem);
 }
 
-.section-heading--compact h3,
-.section-heading h3,
-.subheading h3,
-.project h3,
-.feature-card h3,
-.feature-card h4,
-.skill-card h3,
-.vision-card h3,
-.contact-card h3,
-.dossier-card h3 {
-  margin: 0;
-  font-family: "Sora", sans-serif;
-  letter-spacing: -0.04em;
-}
-
 .section-heading h3,
 .subheading h3 {
+  margin: 0;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
 }
 
@@ -411,7 +406,8 @@ textarea {
   border-radius: 999px;
   background: rgba(185, 195, 255, 0.08);
   color: var(--teal);
-  font-size: 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 600;
   box-shadow: inset 0 0 0 1px rgba(185, 195, 255, 0.08);
 }
 
@@ -514,9 +510,7 @@ textarea {
 
 .timeline__content h4 {
   margin: 0 0 0.75rem;
-  font-family: "Sora", sans-serif;
   font-size: 1.8rem;
-  letter-spacing: -0.04em;
 }
 
 .timeline__content p {
@@ -633,7 +627,8 @@ textarea {
 
 .subheading__icon {
   color: var(--teal);
-  font-size: 1.5rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
 }
 
 .meta {
