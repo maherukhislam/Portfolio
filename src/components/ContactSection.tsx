@@ -85,7 +85,7 @@ export function ContactSection({ data }: Readonly<ContactSectionProps>) {
             <div className="icon-badge icon-badge--large">{data.dossier.icon}</div>
             <h3>{data.dossier.title}</h3>
             <p>{data.dossier.description}</p>
-            <a className="button button--ghost" href="#contact">
+            <a className="button button--ghost" href="/Maherukh_Islam_Professional_Dossier.md" target="_blank" rel="noreferrer">
               {data.dossier.actionLabel}
             </a>
           </article>
