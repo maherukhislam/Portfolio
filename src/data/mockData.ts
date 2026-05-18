@@ -105,7 +105,7 @@ export const portfolioData = {
     title: "Md. Maherukh Islam",
     highlightedText: "Maherukh Islam",
     description:
-      "Engineering-focused student leader passionate about technology, systems, organizational infrastructure, and digital modernization. Combining scientific analytical reasoning, military cadet discipline, and accessible technology to build practical infrastructure with real institutional value.",
+      "Engineering-focused student leader passionate about technology, systems, organizational infrastructure, and digital modernization. Combining scientific analytical reasoning, Proper discipline, and accessible technology to build practical infrastructure with real institutional value.",
     primaryAction: { href: "#projects", label: "View Case Studies" },
     secondaryAction: { href: "#achievements", label: "View Credentials" },
     photo: {
