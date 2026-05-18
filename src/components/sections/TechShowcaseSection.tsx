@@ -44,7 +44,7 @@ export function TechShowcaseSection() {
         description="Real deployment patterns, project structure, and data pipeline design from active institutional infrastructure."
       />
 
-      <div className="tech-showcase__grid">
+      <div className="card-grid card-grid--two">
         {/* DCCNSC Site Architecture */}
         <div className="pipeline-terminal panel">
           <div className="pipeline-terminal__header">
