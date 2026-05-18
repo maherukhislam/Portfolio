@@ -1372,3 +1372,359 @@ textarea {
     padding: 3rem 1.5rem;
   }
 }
+
+/* ==========================================================================
+   WCAG 2.1 Accessibility Glowing Focus Indicator
+   ========================================================================== */
+*:focus-visible {
+  outline: 2px solid #65d9ce;
+  outline-offset: 4px;
+  box-shadow: 0 0 10px rgba(101, 217, 206, 0.5);
+}
+
+/* ==========================================================================
+   Project Monospace Terminal Case Studies
+   ========================================================================== */
+.project__case-study {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background-color: rgba(4, 24, 35, 0.45);
+  border: 1px solid rgba(101, 217, 206, 0.15);
+  border-radius: 6px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project__case-study-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(101, 217, 206, 0.2);
+  color: #65d9ce;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.project__case-study-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.project__case-study-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.project__case-study-dot:nth-child(1) { background-color: #ff5f56; }
+.project__case-study-dot:nth-child(2) { background-color: #ffbd2e; }
+.project__case-study-dot:nth-child(3) { background-color: #27c93f; }
+
+.project__case-study-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.project__case-study-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .project__case-study-row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+.project__case-study-label {
+  color: #65d9ce;
+  font-weight: bold;
+  opacity: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.project__case-study-value {
+  color: #e6edf3;
+}
+
+/* ==========================================================================
+   Positioning & Operational Metrics Hub
+   ========================================================================== */
+.highlights__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .highlights__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.highlights__positioning {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.highlights__philosophy-card {
+  padding: 1.75rem;
+  background-color: rgba(18, 19, 24, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlights__philosophy-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #65d9ce;
+}
+
+.highlights__philosophy-card p {
+  line-height: 1.6;
+  color: #c9d1d9;
+}
+
+.highlights__mission-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.highlights__mission-tag {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(101, 217, 206, 0.05);
+  border: 1px solid rgba(101, 217, 206, 0.12);
+  border-radius: 4px;
+  color: #65d9ce;
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.02em;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background-color: rgba(4, 24, 35, 0.18);
+  border: 1px solid rgba(101, 217, 206, 0.08);
+  border-radius: 8px;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.metric-card:hover {
+  border-color: rgba(101, 217, 206, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(101, 217, 206, 0.05);
+}
+
+.metric-card__value {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.65rem;
+  font-weight: bold;
+  color: #65d9ce;
+  text-shadow: 0 0 10px rgba(101, 217, 206, 0.15);
+}
+
+.metric-card__label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.metric-card__desc {
+  font-size: 0.8rem;
+  color: #8b949e;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Technical Showcase & Git Graph
+   ========================================================================== */
+.tech-showcase {
+  background-color: rgba(18, 19, 24, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.tech-showcase__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .tech-showcase__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.git-matrix {
+  padding: 1.5rem;
+  background-color: rgba(4, 24, 35, 0.15);
+  border: 1px solid rgba(101, 217, 206, 0.08);
+  border-radius: 8px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.git-matrix__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  color: #65d9ce;
+  border-bottom: 1px solid rgba(101, 217, 206, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.git-matrix__calendar {
+  display: grid;
+  grid-template-columns: repeat(28, 1fr);
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.git-matrix__cell {
+  aspect-ratio: 1;
+  border-radius: 1.5px;
+  background-color: rgba(101, 217, 206, 0.04);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.git-matrix__cell:hover {
+  transform: scale(1.3);
+  z-index: 2;
+}
+
+.git-matrix__cell--1 { background-color: rgba(101, 217, 206, 0.18); }
+.git-matrix__cell--2 { background-color: rgba(101, 217, 206, 0.4); }
+.git-matrix__cell--3 { background-color: rgba(101, 217, 206, 0.65); }
+.git-matrix__cell--4 { background-color: #65d9ce; box-shadow: 0 0 6px rgba(101, 217, 206, 0.3); }
+
+.git-matrix__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #8b949e;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.git-matrix__legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.git-matrix__legend-box {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+  background-color: rgba(101, 217, 206, 0.04);
+}
+
+/* ASCII Pipeline Diagram */
+.pipeline-terminal {
+  padding: 1.5rem;
+  background-color: rgba(12, 17, 24, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pipeline-terminal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  color: #65d9ce;
+  border-bottom: 1px solid rgba(101, 217, 206, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.pipeline-terminal__diagram {
+  color: #8b949e;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.pipeline-terminal__diagram span.hl {
+  color: #65d9ce;
+  font-weight: bold;
+}
+
+/* Profile Badge Glow Outline */
+.hero__photo-badge--a11y {
+  background-color: rgba(101, 217, 206, 0.1) !important;
+  border: 1px solid rgba(101, 217, 206, 0.3) !important;
+  color: #65d9ce !important;
+}
+
+/* WCAG Accessibility Skip Link */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+.skip-to-content:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  padding: 0.75rem 1.5rem;
+  background-color: #65d9ce;
+  color: #041823;
+  font-weight: bold;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(101, 217, 206, 0.4);
+}

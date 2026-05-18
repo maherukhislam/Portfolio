@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { SectionHeading } from "../SectionHeading";
 import { TagRow } from "../TagRow";
+import type { CaseStudy } from "../../data/mockData";
 
 export interface ProjectsSectionProps {
   readonly data: Readonly<{
@@ -12,21 +13,21 @@ export interface ProjectsSectionProps {
     featured: Readonly<{
       title: string;
       description: string;
-      problem: string;
       tags: readonly string[];
       mediaClass?: string;
       link?: string;
       imageUrl?: string;
+      caseStudy?: CaseStudy;
     }>;
     secondary: readonly Readonly<{
       title: string;
       description: string;
-      problem: string;
       tags: readonly string[];
       variant?: "default" | "teal";
       mediaClass?: string;
       link?: string;
       imageUrl?: string;
+      caseStudy?: CaseStudy;
     }>[];
     loadingTitle: string;
     loadingItems: readonly Readonly<{
@@ -63,6 +64,51 @@ function ProjectMedia({ imageUrl, mediaClass }: { imageUrl?: string; mediaClass?
   );
 }
 
+function ProjectCaseStudy({ caseStudy }: { caseStudy: CaseStudy }) {
+  return (
+    <div className="project__case-study" aria-label="System Case Study Monospace Log">
+      <div className="project__case-study-title">
+        <span>⚙️ SYSTEM_CASE_STUDY_LOG.md</span>
+        <div className="project__case-study-dots" aria-hidden="true">
+          <div className="project__case-study-dot" />
+          <div className="project__case-study-dot" />
+          <div className="project__case-study-dot" />
+        </div>
+      </div>
+      <div className="project__case-study-grid">
+        <div className="project__case-study-row">
+          <span className="project__case-study-label">[PROBLEM]</span>
+          <span className="project__case-study-value">{caseStudy.problem}</span>
+        </div>
+        <div className="project__case-study-row">
+          <span className="project__case-study-label">[ROLE]</span>
+          <span className="project__case-study-value">{caseStudy.role}</span>
+        </div>
+        <div className="project__case-study-row">
+          <span className="project__case-study-label">[SOLUTION]</span>
+          <span className="project__case-study-value">{caseStudy.solution}</span>
+        </div>
+        <div className="project__case-study-row">
+          <span className="project__case-study-label">[IMPACT]</span>
+          <span className="project__case-study-value" style={{ color: "#65d9ce", fontWeight: "bold" }}>
+            {caseStudy.impact}
+          </span>
+        </div>
+        <div className="project__case-study-row">
+          <span className="project__case-study-label">[TECH]</span>
+          <span className="project__case-study-value" style={{ fontFamily: "monospace" }}>
+            {caseStudy.technologies.join(", ")}
+          </span>
+        </div>
+        <div className="project__case-study-row">
+          <span className="project__case-study-label">[CHALLENGE]</span>
+          <span className="project__case-study-value">{caseStudy.challenges}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
   return (
     <section className="shell section projects" id={data.id}>
@@ -79,7 +125,7 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
           <TagRow tags={data.featured.tags} tealIndexes={[2]} />
           <h3>
             {data.featured.link ? (
-              <a href={data.featured.link} target="_blank" rel="noopener noreferrer" className="project__link-hover">
+              <a href={data.featured.link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${data.featured.title} (Opens in new tab)`}>
                 {data.featured.title} <span className="project__link-arrow">↗</span>
               </a>
             ) : (
@@ -87,7 +133,7 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
             )}
           </h3>
           <p>{data.featured.description}</p>
-          <p className="project__problem">{data.featured.problem}</p>
+          {data.featured.caseStudy ? <ProjectCaseStudy caseStudy={data.featured.caseStudy} /> : null}
         </div>
       </article>
 
@@ -98,11 +144,11 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
               <ProjectMedia imageUrl={project.imageUrl} mediaClass={project.mediaClass} />
             ) : null}
             <div className={`project__body${index === 1 ? " project__body--centered" : ""}`}>
-              {index === 1 ? <div className="icon-badge icon-badge--large">&lt;&gt;</div> : null}
+              {index === 1 ? <div className="icon-badge icon-badge--large" aria-hidden="true">&lt;&gt;</div> : null}
               <TagRow tags={project.tags} tealIndexes={project.variant === "teal" ? [0] : []} />
               <h3>
                 {project.link ? (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__link-hover">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${project.title} (Opens in new tab)`}>
                     {project.title} <span className="project__link-arrow">↗</span>
                   </a>
                 ) : (
@@ -110,7 +156,7 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
                 )}
               </h3>
               <p>{project.description}</p>
-              <p className="project__problem">{project.problem}</p>
+              {project.caseStudy ? <ProjectCaseStudy caseStudy={project.caseStudy} /> : null}
             </div>
           </article>
         ))}
@@ -123,7 +169,7 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
       <div className="card-grid card-grid--three">
         {data.loadingItems.map((item) => (
           <article key={item.title} className="placeholder-card panel">
-            <div className="icon-badge">{item.icon}</div>
+            <div className="icon-badge" aria-hidden="true">{item.icon}</div>
             <h4>{item.title}</h4>
             <p>{item.description}</p>
           </article>

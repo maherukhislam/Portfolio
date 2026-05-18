@@ -1,6 +1,6 @@
 import { FeatureCard } from "../FeatureCard";
 import { SectionHeading } from "../SectionHeading";
-import { TagRow } from "../TagRow";
+import type { LeadershipItem } from "../../data/mockData";
 
 export interface AchievementsSectionProps {
   readonly data: Readonly<{
@@ -21,12 +21,7 @@ export interface AchievementsSectionProps {
       description: string;
       metaTone?: "default" | "blue";
     }>[];
-    leadership: Readonly<{
-      eyebrow: string;
-      title: string;
-      description: string;
-      tags: readonly string[];
-    }>;
+    leadershipLogs: readonly LeadershipItem[];
   }>;
 }
 
@@ -76,19 +71,34 @@ export function AchievementsSection({ data }: Readonly<AchievementsSectionProps>
       <div className="stack">
         <div className="subheading">
           <span className="subheading__icon">03</span>
-          <h3>Leadership &amp; Service</h3>
+          <h3>Leadership &amp; Operational Logs</h3>
         </div>
-        <article className="leadership panel">
-          <div className="leadership__visual" aria-hidden="true">
-            <div className="leadership__seal" />
-          </div>
-          <div className="leadership__body">
-            <p className="eyebrow eyebrow--small">{data.leadership.eyebrow}</p>
-            <h4>{data.leadership.title}</h4>
-            <p>{data.leadership.description}</p>
-            <TagRow tags={data.leadership.tags} tealIndexes={[2]} />
-          </div>
-        </article>
+        <div className="card-grid card-grid--three" style={{ gap: "1.5rem" }}>
+          {data.leadershipLogs.map((log) => (
+            <article key={log.role} className="panel" style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <span className="icon-badge" aria-hidden="true" style={{ fontSize: "1.1rem" }}>{log.icon}</span>
+                <span style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#65d9ce", border: "1px solid rgba(101, 217, 206, 0.2)", padding: "0.2rem 0.5rem", borderRadius: "4px" }}>
+                  {log.period}
+                </span>
+              </div>
+              <div>
+                <h4 style={{ fontSize: "1.05rem", fontWeight: "bold", color: "#e6edf3", margin: 0 }}>{log.role}</h4>
+                <p style={{ fontSize: "0.85rem", color: "#65d9ce", margin: "0.15rem 0 0 0", opacity: 0.9 }}>{log.organization}</p>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "#8b949e", fontStyle: "italic", margin: 0 }}>
+                &ldquo;{log.impact}&rdquo;
+              </p>
+              <ul style={{ margin: "0.5rem 0 0 0", paddingLeft: "1.15rem", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                {log.details.map((detail, dIdx) => (
+                  <li key={dIdx} style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.45" }}>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

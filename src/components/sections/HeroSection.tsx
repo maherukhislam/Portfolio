@@ -50,6 +50,9 @@ export function HeroSection({ data }: Readonly<HeroSectionProps>) {
           />
           <div className="hero__photo-glow" />
           <div className="hero__photo-badge">{data.photo.badge}</div>
+          <div className="hero__photo-badge hero__photo-badge--a11y" style={{ top: "auto", bottom: "1rem", right: "1rem" }}>
+            ✓ A11y Trained
+          </div>
         </div>
         <div className="hero__visual-bottom">
           <div className="hero__visual-badge">

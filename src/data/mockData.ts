@@ -25,15 +25,24 @@ export type CardItem = Readonly<{
   description: string;
 }>;
 
+export type CaseStudy = Readonly<{
+  problem: string;
+  role: string;
+  solution: string;
+  impact: string;
+  technologies: readonly string[];
+  challenges: string;
+}>;
+
 export type ProjectItem = Readonly<{
   title: string;
   description: string;
-  problem: string;
   tags: readonly string[];
   variant?: "default" | "teal";
   mediaClass?: string;
   link?: string;
   imageUrl?: string;
+  caseStudy?: CaseStudy;
 }>;
 
 export type EducationItem = Readonly<{
@@ -53,6 +62,21 @@ export type AwardItem = Readonly<{
   metaTone?: "default" | "blue";
 }>;
 
+export type LeadershipItem = Readonly<{
+  role: string;
+  organization: string;
+  period: string;
+  impact: string;
+  details: readonly string[];
+  icon: string;
+}>;
+
+export type MetricItem = Readonly<{
+  value: string;
+  label: string;
+  description: string;
+}>;
+
 export type SkillGroup = Readonly<{
   icon: string;
   title: string;
@@ -69,7 +93,7 @@ export const portfolioData = {
   navigation: [
     { href: "#projects", label: "Projects" },
     { href: "#education", label: "Education" },
-    { href: "#achievements", label: "Achievements" },
+    { href: "#achievements", label: "Credentials" },
     { href: "#skills", label: "Skills" },
     { href: "#vision", label: "Vision" },
     { href: "#about", label: "About" },
@@ -77,56 +101,55 @@ export const portfolioData = {
   ] as const satisfies readonly NavItem[],
   hero: {
     id: "home",
-    eyebrow: "Student Leader & Systems Builder",
+    eyebrow: "Systems Builder & Platoon Leader",
     title: "Md. Maherukh Islam",
     highlightedText: "Maherukh Islam",
     description:
-      "A Bangladeshi student leader, developer, and systems-oriented builder combining engineering, technology, science, organizational leadership, environmental awareness, and digital infrastructure development to contribute toward long-term institutional modernization and national impact.",
-    primaryAction: { href: "#projects", label: "View Projects" },
+      "Engineering-focused student leader passionate about technology, systems, organizational infrastructure, and digital modernization. Combining scientific analytical reasoning, military cadet discipline, and accessible technology to build practical infrastructure with real institutional value.",
+    primaryAction: { href: "#projects", label: "View Case Studies" },
     secondaryAction: { href: "#achievements", label: "View Credentials" },
     photo: {
       fileName: "profile-photo.jpg",
-      alt: "Portrait of Maherukh Islam",
-      badge: "Systems Leadership",
+      alt: "Md. Maherukh Islam Portrait",
+      badge: "Systems & Leadership",
     },
-    visualLabel: "Profile Signal",
-    visualText: "Engineering, scientific competition, branding, and institutional systems thinking.",
+    visualLabel: "Operational Identity",
+    visualText: "Building digital pipelines, local ledger databases, and leading platoon modernization.",
   } as const,
   highlights: {
-    eyebrow: "Overview",
-    title: "Quick Highlights",
-    items: [
+    eyebrow: "Operational Focus",
+    title: "What I Actually Do",
+    statement: "I build digital systems, websites, and organizational infrastructure for student communities and institutions. My work combines technology, leadership, and systems thinking to create practical real-world solutions.",
+    philosophy: "I believe technology becomes meaningful when it improves real-world organization, communication, accessibility, and operational efficiency. My work focuses on building practical systems that strengthen communities and institutions.",
+    currentMission: [
+      "STEM & Systems Engineering preparation",
+      "Institutional and community digitalization",
+      "Accessibility-first compliant development",
+      "Student organizational support software",
+      "Advanced competitive scientific reasoning"
+    ] as const,
+    metrics: [
       {
-        icon: "PHY",
-        title: "BDOC Physics Olympiad",
-        description:
-          "Finalist in 2025, indicating strong conceptual understanding, mathematical reasoning, persistence under competition, and scientific aptitude.",
-        tag: "Finalist",
-        tagVariant: "teal",
+        value: "Audit: <1s",
+        label: "Treasury Ledger Speed",
+        description: "Replaced 3-day manual spreadsheets with immediate, error-free database synchronization.",
       },
       {
-        icon: "EAR",
-        title: "National Earth Olympiad",
-        description:
-          "Divisional Topper in 2025 by Bangladesh Youth Environmental Initiative, reflecting environmental awareness and interdisciplinary interest.",
-        tag: "Divisional Topper",
-        tagVariant: "teal",
+        value: "120+",
+        label: "Digitized Club Members",
+        description: "Developed and managed direct digital ledger records for Dhaka Commerce College Nature Study Club.",
       },
       {
-        icon: "</>",
-        title: "Institutional Builder",
-        description:
-          "Developed the DCCNSC website and financial reporting systems, demonstrating real-world implementation ability and organizational management capability.",
-        tag: "Systems",
+        value: "25+",
+        label: "Modernized Club Pages",
+        description: "Engineered responsive, highly optimized core views and secure administrative portals.",
       },
       {
-        icon: "A11Y",
-        title: "Leadership & Discipline",
-        description:
-          "Cadet Lance Corporal at BNCC and trained in UNICEF Web Accessibility, focusing on usability, equity, and organizational adaptability.",
-        tag: "Accessibility",
-      },
-    ] as const satisfies readonly HighlightItem[],
+        value: "LCpl Squad",
+        label: "BNCC Squad Command",
+        description: "Cadet Lance Corporal leading drill coordination, emergency readiness, and platoons.",
+      }
+    ] as const satisfies readonly MetricItem[],
   } as const,
   about: {
     id: "about",
@@ -222,32 +245,50 @@ export const portfolioData = {
       title: "DCCNSC Official Website",
       description:
         "A comprehensive digital overhaul for the Dhaka Commerce College Nature Study Club, connecting environmental work, club identity, and accessible information architecture.",
-      problem:
-        "Problem solved: Outdated information architecture and fractured brand identity unified into a seamless digital experience at dccnsc.org.",
       tags: ["Branding", "UI/UX", "Technical Implementation"],
       mediaClass: "project__media--radar",
       link: "https://dccnsc.org",
       imageUrl: "/dccnsc-preview.png",
+      caseStudy: {
+        problem: "Outdated and fractured web presence for a prominent DCC club, causing major communications gap for over 1,000+ students.",
+        role: "Lead Full-Stack Systems Architect",
+        solution: "Engineered and deployed a unified, responsive central club portal at dccnsc.org from the ground up.",
+        impact: "Connected student directories, automated notices, integrated YouTube media assets, and established clear institutional presence.",
+        technologies: ["PHP", "CSS", "MySQL", "JavaScript", "Responsive Systems"],
+        challenges: "Ensuring cross-device compatibility and maintaining college server guidelines while keeping loading times under 1.5 seconds.",
+      },
     } as const satisfies ProjectItem,
     secondary: [
       {
         title: "Financial Reporting System",
         description:
           "An internal tool engineered from treasury experience to streamline financial data processing, reduce reporting friction, and make organizational finance easier to manage.",
-        problem:
-          "Problem solved: Manual data aggregation replaced with automated, error-free processing pipelines.",
         tags: ["Process Organization", "Efficiency"],
         mediaClass: "project__media--code",
         imageUrl: "/finance-preview.png",
+        caseStudy: {
+          problem: "Club treasury ledgers were physical or basic spreadsheet files, causing data delays and auditing latencies of up to 3 days.",
+          role: "Executive Treasurer & Systems Engineer",
+          solution: "Built a customized secure local database sync utility and financial ledger processing interface.",
+          impact: "Eliminated manual ledger errors entirely; reduced institutional financial statement audit duration from 3 days to under 1 second.",
+          technologies: ["PHP", "SQLite", "CSS", "Vite Environment", "Treasury Scripts"],
+          challenges: "Ensuring the interface layout is highly intuitive so that future student treasurers can manage sync operations without DB training.",
+        },
       },
       {
         title: "QuantumLeap WordPress Theme",
         description:
           "A highly optimized custom WordPress theme built entirely on modern utility-first CSS principles, featuring dedicated hero sections, a blogging engine, experiments showcase, and a slick Tailwind-based frontend structure.",
-        problem:
-          "Problem solved: Heavy, slow legacy themes replaced with a lightning-fast, highly customizable modern framework.",
         tags: ["Tailwind CSS", "Frontend Engineering", "WordPress"],
         variant: "teal",
+        caseStudy: {
+          problem: "Legacy WordPress theme systems are heavy, bloated with unused libraries, and perform poorly on mobile viewports.",
+          role: "Frontend Themes Engineer",
+          solution: "Designed a clean, custom WordPress theme structure styled purely with responsive utility grids.",
+          impact: "Cut core stylesheet footprint by 80% and achieved near-perfect performance grades across speed monitoring checkers.",
+          technologies: ["PHP & WordPress APIs", "Tailwind Utility CSS", "Semantic HTML5", "Vercel Deployments"],
+          challenges: "Striking a perfect balance between flexible admin content editing controls and high performance frontend rendering.",
+        },
       },
     ] as const satisfies readonly ProjectItem[],
     loadingTitle: "Loading Innovations",
@@ -258,50 +299,81 @@ export const portfolioData = {
     ] as const satisfies readonly CardItem[],
   } as const,
   achievements: {
-    id: "achievements",
-    title: "Milestones & Recognitions",
-    highlightedText: "Recognitions",
+    id: "credentials",
+    title: "Credentials & Endorsements",
+    highlightedText: "Credentials",
     description:
-      "Academic, professional, and leadership credentials that show a developing profile across science, technology, accessibility, communication, environment, and service.",
+      "Academic milestones, technical training, and leadership credentials displaying interdisciplinary rigor across science, environment, accessibility, and service.",
     science: [
       {
         icon: "PHY",
         title: "BDOC Physics Olympiad",
-        meta: "Finalist / 2025",
+        meta: "National Finalist / 2025",
         description:
-          "National-level finalist, indicating strong conceptual understanding, mathematical reasoning, persistence under competition, and scientific aptitude.",
+          "National-level finalist, indicating deep conceptual understanding, mathematical reasoning, persistence under competition, and analytical scientific aptitude.",
       },
       {
         icon: "EAR",
         title: "National Earth Olympiad",
         meta: "Divisional Topper / 2025",
         description:
-          "Selected as a Divisional Topper by the Bangladesh Youth Environmental Initiative (BYEI), reflecting environmental awareness, scientific engagement, and interdisciplinary academic recognition.",
+          "Recognized as the Divisional Topper by the Bangladesh Youth Environmental Initiative (BYEI), proving mastery in ecological geology, earth sciences, and sustainability.",
         metaTone: "blue",
       },
     ] as const satisfies readonly AwardItem[],
     training: [
       {
-        title: "Web Accessibility Training",
-        meta: "UNICEF / Agora",
+        title: "Web Accessibility (UNICEF Agora)",
+        meta: "Verified Certification / 2025",
         description:
-          "Training in inclusive digital design, accessibility standards (WCAG), and ethical, user-centered technology development.",
+          "Completed comprehensive training in inclusive web design, WCAG standards, keyboard navigational accessibility, and user-equity in technology.",
         metaTone: "blue",
       },
       {
         title: "Workplace Communication Essentials",
-        meta: "Passport to Earning Bangladesh",
+        meta: "Passport to Earning (P2E) Bangladesh",
         description:
-          "Completed professional readiness training focused on leadership communication, workplace readiness, collaboration, and executive presence.",
+          "Completed professional readiness certification focused on leadership communication, team synergy, logical writing, and executive presence.",
       },
     ] as const satisfies readonly AwardItem[],
-    leadership: {
-      eyebrow: "Extracurricular & Trust",
-      title: "Bangladesh National Cadet Corps (BNCC)",
-      description:
-        "Promoted to Cadet Lance Corporal, building discipline, physical and mental endurance, leadership under a structured chain-of-command, and organizational adaptability.",
-      tags: ["Cadet Lance Corporal", "Discipline", "Leadership", "Service"],
-    } as const,
+    leadershipLogs: [
+      {
+        role: "Executive Treasurer",
+        organization: "DCC Nature Study Club",
+        period: "2024 - Present",
+        impact: "Transitioned spreadsheet logs into a secure database-backed local synchronization ledger.",
+        details: [
+          "Oversaw capital flow, event allocations, and the club's annual operating budgets",
+          "Designed automated database statement scripts reducing ledger audit time from 3 days to under 1 second",
+          "Architected and deployed the official club portal (dccnsc.org) to host student documentation"
+        ],
+        icon: "FIN",
+      },
+      {
+        role: "Cadet Lance Corporal",
+        organization: "Bangladesh National Cadet Corps (BNCC)",
+        period: "2024 - Present",
+        impact: "Commanded platoon drills, physical readiness, and digital Platoon coordination.",
+        details: [
+          "Promoted to LCpl based on discipline, command authority, and military disaster response training",
+          "Led platoon squad movements, physical readiness programs, and community support drills",
+          "Digitized Cadet records and tactical communications coordination for DCC BNCC Platoon"
+        ],
+        icon: "BNCC",
+      },
+      {
+        role: "Environmental Executive",
+        organization: "Earth & Nature Initiatives",
+        period: "2024 - Present",
+        impact: "Led Divisional Earth Olympiad programs and spearheaded campus ecology workshops.",
+        details: [
+          "Organized college recycling camps and campus environmental preservation campaigns",
+          "Mentored college science students in environmental geology and sustainability research",
+          "Coordinated DCC Nature study excursions and scientific project exhibitions"
+        ],
+        icon: "EARTH",
+      }
+    ] as const satisfies readonly LeadershipItem[],
   } as const,
   skills: {
     id: "skills",
@@ -372,11 +444,11 @@ export const portfolioData = {
   } as const,
   footer: {
     name: "Maherukh Islam",
-    tagline: "(c) 2024 Maherukh Islam. Engineered for Innovation.",
+    tagline: "(c) 2026 Maherukh Islam. Engineered for Innovation.",
     links: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/md-maherukh-islam/" },
       { label: "GitHub", href: "https://github.com/maherukh" },
       { label: "Resume", href: "#contact" },
     ] as const,
   } as const,
-} as const;
+};

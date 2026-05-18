@@ -8,6 +8,7 @@ import { EducationSection } from "./components/sections/EducationSection";
 import { HeroSection } from "./components/sections/HeroSection";
 import { HighlightsSection } from "./components/sections/HighlightsSection";
 import { ProjectsSection } from "./components/sections/ProjectsSection";
+import { TechShowcaseSection } from "./components/sections/TechShowcaseSection";
 import { SkillsSection } from "./components/sections/SkillsSection";
 import { VisionSection } from "./components/sections/VisionSection";
 import { portfolioData } from "./data/mockData";
@@ -36,6 +37,7 @@ function App() {
         <HighlightsSection data={portfolioData.highlights} />
         <AboutSection data={portfolioData.about} />
         <ProjectsSection data={portfolioData.projects} />
+        <TechShowcaseSection />
         <EducationSection data={portfolioData.education} />
         <AchievementsSection data={portfolioData.achievements} />
         <SkillsSection data={portfolioData.skills} />

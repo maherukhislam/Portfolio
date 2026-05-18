@@ -17,6 +17,9 @@ export function Header({
 }: Readonly<HeaderProps>) {
   return (
     <header className="site-header">
+      <a href="#operational-focus" className="skip-to-content">
+        Skip to main content
+      </a>
       <nav className="nav shell" aria-label="Primary">
         <a className="brand" href="#home" onClick={onCloseMenu}>
           Maherukh Islam
