@@ -687,18 +687,32 @@ textarea {
 }
 
 .project__media--radar {
-  background:
-    radial-gradient(circle at center, rgba(101, 217, 206, 0.55), transparent 8%),
-    radial-gradient(circle at center, rgba(101, 217, 206, 0.18), transparent 28%),
-    repeating-radial-gradient(circle at center, rgba(101, 217, 206, 0.14) 0 2px, transparent 2px 28px),
-    linear-gradient(180deg, rgba(4, 24, 35, 0.9), rgba(18, 19, 24, 0.96));
-  animation: radarSweep 8s linear infinite;
+  background-image:
+    linear-gradient(to bottom, rgba(4, 24, 35, 0.1) 0%, rgba(18, 19, 24, 0.85) 100%),
+    url("/dccnsc-preview.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  transition: background-position 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project:hover .project__media--radar {
+  background-position: bottom center;
 }
 
 .project__media--code {
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.4)),
-    linear-gradient(135deg, rgba(28, 32, 44, 0.95), rgba(12, 17, 24, 0.95));
+  position: relative;
+  background-image:
+    linear-gradient(to bottom, rgba(4, 24, 35, 0.1) 0%, rgba(18, 19, 24, 0.85) 100%),
+    url("/finance-preview.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  transition: background-position 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project:hover .project__media--code {
+  background-position: bottom center;
 }
 
 .project__media--code::before {
