@@ -299,7 +299,7 @@ export const portfolioData = {
     ] as const satisfies readonly CardItem[],
   } as const,
   achievements: {
-    id: "credentials",
+    id: "achievements",
     title: "Credentials & Endorsements",
     highlightedText: "Credentials",
     description:

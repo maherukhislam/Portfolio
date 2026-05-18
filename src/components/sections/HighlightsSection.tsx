@@ -14,7 +14,7 @@ export interface HighlightsSectionProps {
 
 export function HighlightsSection({ data }: Readonly<HighlightsSectionProps>) {
   return (
-    <section className="shell section" id="operational-focus" aria-labelledby="highlights-title">
+    <section className="shell section" id="operational-focus" aria-label={data.title}>
       <SectionHeading eyebrow={data.eyebrow} title={data.title} />
 
       <div className="highlights__grid">

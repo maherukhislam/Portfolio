@@ -11,7 +11,7 @@ export function TechShowcaseSection() {
   ];
 
   return (
-    <section className="shell section tech-showcase" id="tech-showcase" aria-labelledby="showcase-title">
+    <section className="shell section tech-showcase" id="tech-showcase" aria-label="Technical Showcase">
       <SectionHeading
         eyebrow="Technical Infrastructure"
         title="Showcasing Systems Depth"

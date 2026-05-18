@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SectionHeading } from "../SectionHeading";
 import { TagRow } from "../TagRow";
 import type { CaseStudy } from "../../data/mockData";
@@ -40,16 +40,41 @@ export interface ProjectsSectionProps {
 
 function ProjectMedia({ imageUrl, mediaClass }: { imageUrl?: string; mediaClass?: string }) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!imageUrl) {
       setIsLoaded(true);
       return;
     }
-    const img = new Image();
-    img.src = imageUrl;
-    img.onload = () => {
-      setIsLoaded(true);
+
+    const element = containerRef.current;
+    if (!element) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = new Image();
+            img.src = imageUrl;
+            img.onload = () => {
+              setIsLoaded(true);
+            };
+            observer.unobserve(element);
+          }
+        });
+      },
+      {
+        rootMargin: "100px",
+      }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.unobserve(element);
     };
   }, [imageUrl]);
 
@@ -58,6 +83,7 @@ function ProjectMedia({ imageUrl, mediaClass }: { imageUrl?: string; mediaClass?
 
   return (
     <div
+      ref={containerRef}
       className={`project__media ${mediaClass ?? ""} ${statusClass}`}
       style={style}
     />

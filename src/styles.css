@@ -1,16 +1,16 @@
 :root {
-  --bg: #050816;
-  --surface: #121318;
-  --surface-2: rgba(18, 19, 24, 0.72);
-  --surface-3: rgba(31, 31, 37, 0.8);
-  --text: #f4f2f8;
-  --muted: #b6b7c6;
-  --line: rgba(255, 255, 255, 0.1);
-  --line-soft: rgba(255, 255, 255, 0.06);
-  --primary: #b9c3ff;
+  --bg: #03050c;
+  --surface: #0a0c16;
+  --surface-2: rgba(10, 12, 22, 0.75);
+  --surface-3: rgba(20, 24, 40, 0.85);
+  --text: #f4f5fc;
+  --muted: #8e95b2;
+  --line: rgba(101, 217, 206, 0.08);
+  --line-soft: rgba(255, 255, 255, 0.04);
+  --primary: #94a3ff;
   --teal: #65d9ce;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-  --radius: 24px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --radius: 20px;
   --container: 1200px;
 }
 
@@ -49,40 +49,41 @@ textarea {
   overflow: hidden;
   pointer-events: none;
   z-index: -1;
+  background: radial-gradient(circle at 50% 0%, #080c20 0%, #03050c 70%);
 }
 
 .background__grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(circle at center, black 50%, transparent 90%);
-  animation: gridDrift 26s linear infinite;
+    linear-gradient(rgba(101, 217, 206, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(101, 217, 206, 0.025) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+  animation: gridDrift 30s linear infinite;
 }
 
 .background__glow {
   position: absolute;
-  width: 52rem;
-  height: 52rem;
+  width: 58rem;
+  height: 58rem;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.3;
+  filter: blur(140px);
+  opacity: 0.22;
 }
 
 .background__glow--left {
-  top: -14rem;
-  left: -12rem;
-  background: radial-gradient(circle, rgba(7, 71, 153, 0.6), transparent 68%);
-  animation: floatGlowOne 18s ease-in-out infinite;
+  top: -16rem;
+  left: -14rem;
+  background: radial-gradient(circle, rgba(78, 108, 255, 0.5), transparent 70%);
+  animation: floatGlowOne 24s ease-in-out infinite;
 }
 
 .background__glow--right {
-  right: -12rem;
-  bottom: -18rem;
-  background: radial-gradient(circle, rgba(0, 153, 144, 0.35), transparent 70%);
-  animation: floatGlowTwo 22s ease-in-out infinite;
+  right: -14rem;
+  bottom: -20rem;
+  background: radial-gradient(circle, rgba(101, 217, 206, 0.3), transparent 70%);
+  animation: floatGlowTwo 28s ease-in-out infinite;
 }
 
 .shell {
@@ -94,7 +95,7 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 20;
-  padding: 1rem 0 0;
+  padding: 1.25rem 0 0;
 }
 
 .nav {
@@ -102,21 +103,36 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem 1.25rem;
-  border: 1px solid var(--line);
+  padding: 0.85rem 1.5rem;
+  border: 1px solid rgba(101, 217, 206, 0.12);
   border-radius: 999px;
-  background: rgba(13, 14, 19, 0.72);
-  backdrop-filter: blur(22px);
-  box-shadow: var(--shadow);
+  background: rgba(6, 8, 18, 0.7);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
   transition:
-    transform 220ms ease,
-    border-color 220ms ease,
-    background 220ms ease;
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 1px;
+  background: linear-gradient(90deg, rgba(101, 217, 206, 0.25) 0%, rgba(148, 163, 255, 0.25) 50%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .nav:hover {
-  transform: translateY(2px);
-  border-color: rgba(185, 195, 255, 0.2);
+  transform: translateY(1px);
+  border-color: rgba(101, 217, 206, 0.25);
+  background: rgba(6, 8, 18, 0.8);
 }
 
 .brand,
@@ -272,7 +288,11 @@ textarea {
 .hero__copy h1 span,
 .about__hero h2 span,
 .section-heading h2 span {
-  color: var(--teal);
+  background: linear-gradient(135deg, var(--teal) 0%, #a2ffd7 50%, var(--primary) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradientPulse 4s ease infinite;
 }
 
 .hero__lede,
@@ -316,16 +336,35 @@ textarea {
 .feature-card,
 .skill-card,
 .contact-form {
-  border: 1px solid var(--line-soft);
+  border: 1px solid rgba(101, 217, 206, 0.08);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
-  backdrop-filter: blur(16px);
-  box-shadow: var(--shadow);
+  background: linear-gradient(180deg, rgba(6, 12, 28, 0.5) 0%, rgba(10, 12, 22, 0.6) 100%);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  position: relative;
   transition:
-    transform 260ms ease,
-    border-color 260ms ease,
-    box-shadow 260ms ease,
-    background 260ms ease;
+    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel::before,
+.feature-card::before,
+.skill-card::before,
+.contact-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(101, 217, 206, 0.18), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.8;
+  transition: opacity 350ms ease, background 350ms ease;
 }
 
 .feature-card:hover,
@@ -337,9 +376,17 @@ textarea {
 .dossier-card:hover,
 .future-learning:hover,
 .leadership:hover {
-  transform: translateY(-8px);
-  border-color: rgba(101, 217, 206, 0.18);
-  box-shadow: 0 30px 85px rgba(0, 0, 0, 0.42);
+  transform: translateY(-5px);
+  border-color: rgba(101, 217, 206, 0.35);
+  box-shadow: 0 24px 60px rgba(101, 217, 206, 0.08);
+  background: linear-gradient(180deg, rgba(6, 12, 28, 0.65) 0%, rgba(10, 12, 22, 0.75) 100%);
+}
+
+.feature-card:hover::before,
+.skill-card:hover::before,
+.contact-form:hover::before {
+  opacity: 1;
+  background: linear-gradient(180deg, rgba(101, 217, 206, 0.42), transparent 45%);
 }
 
 .hero__visual {
@@ -1727,4 +1774,13 @@ textarea {
   font-family: 'Fira Code', monospace;
   z-index: 9999;
   box-shadow: 0 4px 20px rgba(101, 217, 206, 0.4);
+}
+
+@keyframes textGradientPulse {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }

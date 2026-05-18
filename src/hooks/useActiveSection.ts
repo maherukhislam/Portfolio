@@ -5,7 +5,19 @@ export function useActiveSection(sectionIds: readonly string[]) {
 
   useEffect(() => {
     const onScroll = () => {
-      const offset = window.scrollY + window.innerHeight * 0.25;
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+      const isAtBottom = window.scrollY + clientHeight >= scrollHeight - 15;
+
+      if (isAtBottom && sectionIds.length > 0) {
+        const lastSection = sectionIds[sectionIds.length - 1];
+        if (lastSection) {
+          setActiveSection(lastSection);
+          return;
+        }
+      }
+
+      const offset = window.scrollY + clientHeight * 0.25;
 
       for (const sectionId of sectionIds) {
         const section = document.getElementById(sectionId);
