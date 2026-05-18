@@ -101,7 +101,7 @@ export const portfolioData = {
   ] as const satisfies readonly NavItem[],
   hero: {
     id: "home",
-    eyebrow: "Systems Builder & Platoon Leader",
+    eyebrow: "Systems Builder & Student Leader",
     title: "Md. Maherukh Islam",
     highlightedText: "Maherukh Islam",
     description:
@@ -300,25 +300,18 @@ export const portfolioData = {
     science: [
       {
         icon: "PHY",
-        title: "BDOC Physics Olympiad 2025",
-        meta: "Finalist",
+        title: "BDOC Physics Olympiad",
+        meta: "National Finalist / 2025",
         description:
-          "Recognized for performance and analytical excellence in competitive physics.",
+          "National-level finalist, indicating deep conceptual understanding, mathematical reasoning, persistence under competition, and analytical scientific aptitude.",
       },
       {
         icon: "EAR",
-        title: "National Earth Olympiad 2025",
-        meta: "Divisional Topper",
+        title: "National Earth Olympiad",
+        meta: "Divisional Topper / 2025",
         description:
-          "Selected among divisional toppers for participation in the national-level environmental science competition organized by Bangladesh Youth Environmental Initiative.",
+          "Recognized as the Divisional Topper by the Bangladesh Youth Environmental Initiative (BYEI), proving mastery in ecological geology, earth sciences, and sustainability.",
         metaTone: "blue",
-      },
-      {
-        icon: "IT",
-        title: "DCCPS CSE Fest 2025",
-        meta: "IT Quiz (2nd Place)",
-        description:
-          "Achieved 2nd place in the Junior IT Quiz competition, demonstrating technical and analytical problem-solving capability.",
       },
     ] as const satisfies readonly AwardItem[],
     training: [
@@ -334,13 +327,6 @@ export const portfolioData = {
         meta: "Passport to Earning (P2E) Bangladesh",
         description:
           "Completed professional readiness certification focused on leadership communication, team synergy, logical writing, and executive presence.",
-      },
-      {
-        title: "Manifesto Talk — Youth, Environment & Climate",
-        meta: "Discussion Forum / 2025",
-        description:
-          "Attended a national youth and climate discussion forum featuring representatives associated with the interim government, focusing on environmental awareness, youth engagement, and future sustainability initiatives.",
-        metaTone: "blue",
       },
     ] as const satisfies readonly AwardItem[],
     leadershipLogs: [
@@ -377,20 +363,9 @@ export const portfolioData = {
           "Become Divisional Topper in the National Earth Olympiad, demonstrating deep expertise in earth sciences and sustainability",
           "wrote and presented educational content on ecological geology, climate change, and conservation for student audiences",
           "perticipated in environmental initiatives and workshops to promote sustainability awareness on campus and in the community"
+
         ],
         icon: "EARTH",
-      },
-      {
-        role: "Cultural Competition Operations Volunteer",
-        organization: "Dhaka Commerce College",
-        period: "2025",
-        impact: "Assisted in operational coordination and event execution during the 34th Annual Cultural Competition.",
-        details: [
-          "Supported crowd control, scheduling alignments, and coordination of stage events during active sessions",
-          "Managed logistical routing for participants, equipment, and guest judges at the venue",
-          "Collaborated directly with college administration to ensure structural event execution guidelines were maintained"
-        ],
-        icon: "OPS",
       }
     ] as const satisfies readonly LeadershipItem[],
   } as const,
