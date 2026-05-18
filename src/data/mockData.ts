@@ -57,6 +57,7 @@ export type ContactLink = Readonly<{
 export const portfolioData = {
   navigation: [
     { href: "#projects", label: "Projects" },
+    { href: "#achievements", label: "Achievements" },
     { href: "#skills", label: "Skills" },
     { href: "#vision", label: "Vision" },
     { href: "#about", label: "About" },
@@ -64,20 +65,20 @@ export const portfolioData = {
   ] as const satisfies readonly NavItem[],
   hero: {
     id: "home",
-    eyebrow: "Overview",
-    title: "Building systems, ideas, and digital experiences.",
-    highlightedText: "and digital experiences.",
+    eyebrow: "Student Leader / Systems Builder",
+    title: "Md. Maherukh Islam",
+    highlightedText: "Maherukh Islam",
     description:
-      "Multidisciplinary student innovator building meaningful digital systems and preparing for a future in engineering, technology, and impactful innovation.",
+      "A Bangladeshi student innovator combining engineering, science, environmental awareness, accessibility, and organizational leadership to build useful systems for long-term institutional impact.",
     primaryAction: { href: "#projects", label: "View Projects" },
-    secondaryAction: { href: "#about", label: "About Me" },
+    secondaryAction: { href: "#achievements", label: "View Credentials" },
     photo: {
       fileName: "profile-photo.jpg",
       alt: "Portrait of Maherukh Islam",
-      badge: "Student Innovator",
+      badge: "Systems Leadership",
     },
-    visualLabel: "Innovation Lab",
-    visualText: "Systems, research, and engineered products.",
+    visualLabel: "Profile Signal",
+    visualText: "Engineering, scientific competitions, accessibility, environment, and leadership.",
   } as const,
   highlights: {
     eyebrow: "Overview",
@@ -85,80 +86,87 @@ export const portfolioData = {
     items: [
       {
         icon: "PHY",
-        title: "Physics Olympiad",
+        title: "BDOC Physics Olympiad",
         description:
-          "National finalist demonstrating strong analytical and problem-solving capabilities.",
-        tag: "Achievement",
+          "Finalist in 2025, showing strong conceptual reasoning, mathematical thinking, and competitive STEM engagement.",
+        tag: "Finalist",
         tagVariant: "teal",
       },
       {
         icon: "EAR",
-        title: "Earth Olympiad",
+        title: "National Earth Olympiad",
         description:
-          "Recognized for comprehensive understanding of environmental systems and earth sciences.",
-        tag: "Recognition",
+          "Divisional Topper recognition in 2025, connecting science literacy with environmental awareness.",
+        tag: "Divisional Topper",
         tagVariant: "teal",
       },
       {
         icon: "</>",
-        title: "Web Developer",
+        title: "Institutional Builder",
         description:
-          "Lead developer for institutional clubs, architecting digital presences from scratch.",
-        tag: "Role",
+          "Building websites, reporting systems, and organized digital workflows for real organizations.",
+        tag: "Systems",
       },
       {
-        icon: "SYS",
-        title: "System Builder",
+        icon: "A11Y",
+        title: "Inclusive Technology",
         description:
-          "Creating organized, scalable digital workflows and interactive experiences.",
-        tag: "Core Skill",
+          "Trained in web accessibility through UNICEF Agora, with a focus on usability and digital equity.",
+        tag: "Accessibility",
       },
     ] as const satisfies readonly HighlightItem[],
   } as const,
   about: {
     id: "about",
-    eyebrow: "Mindset",
-    title: "Engineering with intent.",
-    highlightedText: "Building for impact.",
+    eyebrow: "Profile Pattern",
+    title: "Systems leadership.",
+    highlightedText: "Built through evidence.",
     description:
-      "I believe in the convergence of rigorous systems design and human-centric usability. My approach to engineering is rooted in unyielding curiosity and a fundamental desire to construct elegant, scalable solutions to complex, real-world problems.",
+      "My work sits at the intersection of technical implementation, scientific reasoning, environmental engagement, and organizational responsibility. I am most interested in building systems that make institutions clearer, faster, and more useful.",
     narrativeTitle: "The Narrative",
     timeline: [
       {
         phase: "Phase 01: Inception",
-        title: "Curiosity & Systems",
+        title: "Scientific Curiosity",
         description:
-          "It started with an obsession to understand how things connect. Before writing code, I spent years deconstructing analog systems, searching for the underlying logic that governed their behavior. This structural thinking naturally translated into the digital realm, where code became the ultimate tool to build logic from scratch.",
+          "Physics and earth science competitions strengthened the habit of asking how systems behave, why they fail, and what principles sit underneath visible outcomes. That scientific orientation now supports my engineering direction.",
         tone: "teal",
       },
       {
         phase: "Phase 02: Execution",
-        title: "Web Architecture",
+        title: "Digital Infrastructure",
         description:
-          "The transition to web development was driven by the desire for immediate, tangible impact. I focused on mastering the full stack, not just to build interfaces, but to architect robust, scalable backends that could handle complex data flows. My work became characterized by clean architecture, performance, security, and maintainability over fleeting trends.",
+          "Websites, WordPress systems, reporting workflows, and club operations became practical places to convert structure into working tools. The goal is not only to make things look better, but to make information and processes work better.",
         tone: "primary",
+      },
+      {
+        phase: "Phase 03: Direction",
+        title: "Responsible Technology",
+        description:
+          "Accessibility training, communication development, environmental work, and leadership roles are shaping a broader technical identity: engineering that is inclusive, operationally useful, and aware of civic impact.",
+        tone: "teal",
       },
     ] as const satisfies readonly TimelineItem[],
     quote:
-      "Technology should solve meaningful problems. Systems matter more than appearances.",
+      "Strong systems turn ambition into something people can actually use.",
     focusCards: [
       {
         icon: "ENG",
-        title: "Core Engineering",
+        title: "Engineering & Technical Systems",
         description:
-          "Advancing the structural integrity of web applications. Pushing the boundaries of performance and creating architectures that anticipate future scaling requirements.",
+          "Website development, WordPress customization, reporting tools, UI/UX thinking, and practical digital infrastructure for organizations.",
       },
       {
-        icon: "AI",
-        title: "Applied AI",
+        icon: "SCI",
+        title: "Science & Analytical Capability",
         description:
-          "Integrating machine learning models into pragmatic workflows. Exploring how deterministic systems and probabilistic models can coexist to automate cognitive tasks.",
+          "Physics Olympiad finalist and Earth Olympiad divisional topper recognition, grounded in STEM reasoning and structured problem-solving.",
       },
       {
-        icon: "ECO",
-        title: "Green Tech",
+        icon: "ORG",
+        title: "Leadership & Civic Awareness",
         description:
-          "Applying computational power to environmental challenges. Optimizing resource allocation systems and developing software that minimizes digital carbon footprints.",
+          "Treasury responsibility, BNCC discipline, accessibility training, environmental involvement, and communication development.",
       },
     ] as const satisfies readonly CardItem[],
   } as const,
@@ -168,11 +176,11 @@ export const portfolioData = {
     title: "Engineered",
     highlightedText: "Innovations",
     description:
-      "A curated selection of technical solutions and design systems built to solve complex organizational problems with premium minimalism and high-performance architecture.",
+      "A curated selection of technical and organizational systems built to modernize information, reduce manual friction, and improve institutional workflows.",
     featured: {
       title: "DCCNSC Website",
       description:
-        "A comprehensive digital overhaul focusing on user-centric design and robust technical architecture to modernize the organization's online presence.",
+        "A comprehensive digital overhaul for the Dhaka Commerce College Nature Study Club, connecting environmental work, club identity, and accessible information architecture.",
       problem:
         "Problem solved: Outdated information architecture and fractured brand identity unified into a seamless digital experience.",
       tags: ["Branding", "UI/UX", "Technical Implementation"],
@@ -180,9 +188,9 @@ export const portfolioData = {
     } as const satisfies ProjectItem,
     secondary: [
       {
-        title: "Financial Reporting System",
-        description:
-          "An internal tool engineered to streamline financial data processing, reducing report generation time by 40% through automated workflows and intuitive data visualization.",
+      title: "Financial Reporting System",
+      description:
+          "An internal tool engineered from treasury experience to streamline financial data processing, reduce reporting friction, and make organizational finance easier to manage.",
         problem:
           "Problem solved: Manual data aggregation replaced with automated, error-free processing pipelines.",
         tags: ["Process Organization", "Efficiency"],
@@ -210,62 +218,62 @@ export const portfolioData = {
     title: "Milestones & Recognitions",
     highlightedText: "Recognitions",
     description:
-      "A curated record of academic excellence, professional development, and leadership commitments engineered for continuous growth and impactful innovation.",
+      "Academic, professional, and leadership credentials that show a developing profile across science, technology, accessibility, communication, environment, and service.",
     science: [
       {
         icon: "PHY",
         title: "BDOC Physics Olympiad",
-        meta: "Finalist",
+        meta: "Finalist / 2025",
         description:
-          "Demonstrated advanced problem-solving capabilities and deep understanding of theoretical physics concepts among top national competitors.",
+          "Recognized as a finalist, reflecting strong conceptual reasoning, mathematical thinking, persistence, and competitive academic engagement.",
       },
       {
         icon: "EAR",
         title: "National Earth Olympiad",
-        meta: "Official Recognition",
+        meta: "Divisional Topper / 2025",
         description:
-          "Acknowledged for exceptional knowledge in earth sciences, environmental systems, and analytical reasoning on a national platform.",
+          "Selected as a divisional topper for participation by the Bangladesh Youth Environmental Initiative, strengthening a profile of environmental literacy and science-driven thinking.",
         metaTone: "blue",
       },
     ] as const satisfies readonly AwardItem[],
     training: [
       {
         title: "Web Accessibility Training",
-        meta: "UNICEF",
+        meta: "UNICEF / Agora",
         description:
-          "Comprehensive certification focusing on WCAG standards, inclusive digital design principles, and building universally accessible web interfaces.",
+          "Training in inclusive digital design, usability, and responsible technology development, adding a professional accessibility mindset to web development work.",
         metaTone: "blue",
       },
       {
         title: "Workplace Communication",
-        meta: "Essentials Masterclass",
+        meta: "Passport to Earning Bangladesh",
         description:
-          "Advanced training in cross-functional collaboration, technical articulation, and effective professional discourse.",
+          "Professional development focused on communication, workplace readiness, collaboration, and leadership-oriented self-development.",
       },
     ] as const satisfies readonly AwardItem[],
     leadership: {
       eyebrow: "Extracurricular",
       title: "Bangladesh National Cadet Corps (BNCC)",
       description:
-        "Cultivated rigorous discipline, strategic teamwork, and leadership skills through structured training and national service initiatives. This experience fundamentally shaped an approach to organized problem-solving and resilience in high-pressure environments.",
-      tags: ["Leadership", "Discipline", "Team Architecture"],
+        "Served as a Cadet Lance Corporal, building discipline, structured teamwork, leadership, and resilience through national service-oriented training.",
+      tags: ["Cadet Lance Corporal", "Discipline", "Service"],
     } as const,
   } as const,
   skills: {
     id: "skills",
     title: "Technical Arsenal.",
     description:
-      "A comprehensive breakdown of my engineering capabilities, design competencies, and strategic thinking methodologies.",
+      "A practical capability map across development, design, systems thinking, communication, and the deeper technical specialization I am building next.",
     groups: [
       { icon: "</>", title: "Development", items: ["HTML", "CSS", "React", "Next.js", "PHP", "Tailwind"] },
       { icon: "UX", title: "Design", items: ["UI/UX", "Branding", "Motion Design"] },
-      { icon: "SYS", title: "Systems & Thinking", items: ["Problem solving", "Organization", "Strategy"] },
+      { icon: "SYS", title: "Systems & Thinking", items: ["Problem solving", "Organization", "Strategy", "Financial workflows", "Accessibility"] },
     ] as const satisfies readonly SkillGroup[],
     futureLearning: {
       icon: "AI",
       title: "Future Learning",
-      description: "Exploring the frontier of technology.",
-      tags: ["AI Engineering", "Robotics", "Cybersecurity"],
+      description: "Deepening technical specialization after building a broad interdisciplinary foundation.",
+      tags: ["AI Systems", "Cybersecurity", "Mathematics", "Software Architecture"],
     } as const,
   } as const,
   vision: {
@@ -274,28 +282,28 @@ export const portfolioData = {
     title:
       "I believe technology becomes meaningful when it improves systems, expands access, and creates long-term positive impact.",
     support:
-      "Building the future requires more than elegant code. It demands a rigorous understanding of the systems we disrupt and a commitment to engineering solutions that elevate human potential.",
+      "Building the future requires more than elegant code. It demands scientific reasoning, communication, accessibility, environmental awareness, and the discipline to turn ideas into working infrastructure.",
     cards: [
       {
         title: "Engineering for Scale & Humanity",
         description:
-          "True innovation lies at the intersection of robust architecture and empathetic design. Every product is a living system that must scale efficiently while remaining intuitively accessible to the end user.",
-        tags: ["Systemic Design", "Inclusive Access"],
+          "True innovation sits where robust architecture, inclusive design, and organizational usefulness meet. Every product is a living system that must scale while remaining understandable to the people it serves.",
+        tags: ["Systemic Design", "Inclusive Access", "Institutional Impact"],
       },
       {
         icon: "CLN",
-        title: "Elegant Codebases",
-        description: "Maintainability over cleverness. Clarity over complexity.",
+        title: "Deep Technical Growth",
+        description: "Building stronger foundations in programming, mathematics, AI systems, cybersecurity, and software architecture.",
       },
       {
         icon: "GLB",
-        title: "Global Impact",
-        description: "Building tools that transcend geographical and technical borders.",
+        title: "National-Scale Ambition",
+        description: "Using science, technology, and organizational leadership to contribute to long-term institutional modernization in Bangladesh.",
       },
     ] as const,
     cta: {
       title: "Ready to build the future?",
-      description: "Let's collaborate on systems that matter.",
+      description: "Let's collaborate on useful systems with real institutional value.",
       action: { href: "#contact", label: "Start a Conversation" },
     } as const,
   } as const,
@@ -304,7 +312,7 @@ export const portfolioData = {
     eyebrow: "Currently available for research collaborations.",
     title: "Initiate Contact",
     description:
-      "Whether you have a question, a proposal, or just want to discuss the future of technology, my inbox is open.",
+      "Whether you have a collaboration idea, institutional project, research opportunity, or technology proposal, my inbox is open.",
     links: [
       { label: "Email", value: "hello@maherukh.com", href: "mailto:hello@maherukh.com" },
       { label: "GitHub", value: "github.com/maherukh", href: "https://github.com/maherukh" },

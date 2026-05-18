@@ -15,7 +15,7 @@ import { useMobileNav } from "./hooks/useMobileNav";
 import { useScrollReveal } from "./hooks/useScrollReveal";
 
 function App() {
-  const sectionIds = ["home", "projects", "skills", "vision", "about", "contact"];
+  const sectionIds = ["home", "projects", "achievements", "skills", "vision", "about", "contact"];
   const activeSection = useActiveSection(sectionIds);
   const { isOpen, closeMenu, toggleMenu } = useMobileNav();
   useScrollReveal();
