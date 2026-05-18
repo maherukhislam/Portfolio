@@ -303,14 +303,14 @@ export const portfolioData = {
         title: "BDOC Physics Olympiad 2025",
         meta: "National Finalist",
         description:
-          "Awarded Certificate of Achievement by Bangladesh Olympiad Challenge (BDOC) as a national-level finalist for conceptual and analytical excellence in competitive physics.",
+          "Qualified as a national finalist in the BDOC Physics Olympiad. Excels in classical mechanics and electromagnetism, applying physics principles to engineering-oriented problem solving and logical reasoning.",
       },
       {
         icon: "EAR",
         title: "National Earth Olympiad 2025",
         meta: "Divisional Topper / July 2025",
         description:
-          "Recognized as a Divisional Topper by the Bangladesh Youth Environmental Initiative (BYEI) for environmental science mastery. Participation ID: 16353.",
+          "Recognized as a Divisional Topper by the Bangladesh Youth Environmental Initiative (BYEI) for expertise in climate dynamics, environmental sustainability, resource management, and ecosystem sciences. ID: 16353.",
         metaTone: "blue",
       },
       {
@@ -318,14 +318,14 @@ export const portfolioData = {
         title: "ECO Spark Challenge 1.0",
         meta: "First Place (1st) / 2025",
         description:
-          "Achieved First Place in the ECO Spark Challenge 1.0 Quiz Competition organized by Dhaka Commerce College Nature Study Club, in recognition of outstanding excellence.",
+          "Achieved 1st Place in the ECO Spark Challenge 1.0 Quiz Competition organized by Dhaka Commerce College Nature Study Club, demonstrating advanced understanding of ecological problem solving and environmental systems.",
       },
       {
         icon: "IT",
         title: "DCC Intra College CSE Fest 2025",
         meta: "IT Quiz (2nd Place) / May 18-19, 2025",
         description:
-          "Achieved 2nd place in the Junior IT Quiz competition organized by the Dhaka Commerce College Programming Society (DCCPS).",
+          "Secured 2nd place in the individual Junior IT Quiz organized by Dhaka Commerce College Programming Society (DCCPS), testing general IT knowledge, programming concepts, and web technology problem solving.",
         metaTone: "blue",
       },
       {
@@ -333,14 +333,14 @@ export const portfolioData = {
         title: "1st DCCSC Online Quiz",
         meta: "Achievement / DCC Science Club",
         description:
-          "Awarded Certificate of Achievement for successful performance in the online quiz segment organized by Dhaka Commerce College Science Club.",
+          "Earned achievement recognition in the STEM-oriented 1st DCCSC Online Quiz, testing analytical thinking capabilities and physical science comprehension.",
       },
       {
         icon: "QZ",
         title: "Bijoy Quiz Competition 2024",
         meta: "University of Dhaka / Dec 16, 2024",
         description:
-          "Participated as a competitor in the Victory Day quiz organized by Shahid Sergeant Zahurul Huq Hall Quiz Club, University of Dhaka.",
+          "Competed in a high-caliber university-level environment in the Victory Day quiz organized by Shahid Sergeant Zahurul Huq Hall Quiz Club, focusing on national history, liberation war facts, and culture.",
         metaTone: "blue",
       },
       {
@@ -348,7 +348,7 @@ export const portfolioData = {
         title: "Environment Quiz Olympiad",
         meta: "Participation / Nov 19, 2024",
         description:
-          "Awarded Certificate of Participation for ecological quiz segment organized by Dhaka Commerce College Nature Study Club.",
+          "Participated in the Environment Quiz Olympiad organized by DCCNSC, strengthening environmental knowledge and competitive confidence as preparation for later quiz championships.",
       }
     ] as const satisfies readonly AwardItem[],
     training: [
@@ -356,27 +356,27 @@ export const portfolioData = {
         title: "Web Accessibility (UNICEF Agora)",
         meta: "Verified Certification / Dec 26, 2024",
         description:
-          "Completed comprehensive training in inclusive web design, WCAG standards, keyboard navigational accessibility, and user-equity. Verification ID: wQE5kUfwA.",
+          "Mastered core principles of screen-reader compatibility, keyboard navigation design, and semantic HTML structure. Influences direct user-focused accessibility guidelines for portals like dccnsc.org. Verification ID: wQE5kUfwA.",
         metaTone: "blue",
       },
       {
         title: "Cyber Hygiene Training",
         meta: "APAC Cybersecurity Fund / May 30, 2025",
         description:
-          "Successfully completed Cyber Hygiene Training jointly organized by The Asia Foundation and SAJIDA Foundation, supported by Google.org, CyberPeace Institute, and Global Cyber Alliance.",
+          "Completed security training jointly organized by The Asia Foundation and SAJIDA Foundation (supported by Google.org), covering secure account protection, safe browsing, phishing awareness, and responsible digital behavior.",
       },
       {
         title: "Workplace Communication Essentials",
         meta: "Passport to Earning BD / June 15, 2025",
         description:
-          "Completed professional readiness and leadership communication certification offered by UNICEF Passport to Earning Bangladesh and Wadhwani Foundation.",
+          "Completed communication and leadership readiness training offered by UNICEF Passport to Earning Bangladesh and Wadhwani Foundation, focusing on workplace collaboration, teamwork, and structured writing.",
         metaTone: "blue",
       },
       {
         title: "Manifesto Talk — Youth, Environment & Climate",
         meta: "Discussion Forum / May 31, 2025",
         description:
-          "Attended national youth discussion forum held at the Department of Environment, focusing on climate action, youth empowerment, and sustainability guidelines.",
+          "Participated in discussions alongside representatives connected to the interim government at the Department of Environment, focusing on climate innovation, sustainability policies, and active youth leadership.",
       }
     ] as const satisfies readonly AwardItem[],
     leadershipLogs: [
@@ -422,8 +422,8 @@ export const portfolioData = {
         period: "Nov 5 - 11, 2025",
         impact: "Assisted in operational coordination and event execution during the 34th Annual Cultural Competition.",
         details: [
-          "Awarded Certificate of Appreciation for generous effort and volunteering service (Class XII, Roll S10064)",
-          "Supported crowd control, scheduling alignments, and coordination of stage events at the campus venue",
+          "Awarded Certificate of Appreciation for volunteering service, operational coordination, and participant logistics (Class XII, Roll S10064)",
+          "Supported crowd control, scheduling alignments, and coordinated active stage flows in a high-attendance event venue",
           "Collaborated directly with college administration to ensure standard operational guidelines were maintained"
         ],
         icon: "OPS",
