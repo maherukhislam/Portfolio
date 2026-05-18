@@ -56,11 +56,14 @@ An engineering-focused student leader passionate about technology, systems devel
 
 ### 2. Executive Treasurer | Dhaka Commerce College Nature Study Club (DCCNSC)
 - **Period**: 2024 - Present
-- **Impact**: transition of spreadsheet logs to secure database ledgers; managed cash flows, allocations, and annual operating budgets.
+- **Impact**: Transition of spreadsheet logs to secure database ledgers; managed cash flows, allocations, and annual operating budgets.
 
 ### 3. Environmental Executive | Earth & Nature Initiatives
 - **Period**: 2024 - Present
 - **Impact**: Promoted divisional ecological awareness, led youth workshops, and presented content on conservation and sustainability.
+
+### 4. Cultural Competition Operations Volunteer | 34th Annual Cultural Competition (2025)
+- **Impact**: Assisted in operational coordination and event execution during the 34th Annual Cultural Competition organized by Dhaka Commerce College.
 
 ---
 
@@ -76,8 +79,11 @@ An engineering-focused student leader passionate about technology, systems devel
 - **Completed**: 2024
 - **Focus**: Advanced mathematics and logical sciences.
 
-### Verified Accolades
-- **BDOC Physics Olympiad (2025)**: National Finalist, demonstrating high conceptual mathematical and physics reasoning.
-- **National Earth Olympiad (2025)**: Divisional Topper recognition from Bangladesh Youth Environmental Initiative (BYEI) for expertise in geological ecology.
+### Verified Accolades & Civic Forums
+- **BDOC Physics Olympiad (2025)**: National Finalist, recognized for performance and analytical excellence in competitive physics.
+- **National Earth Olympiad (2025)**: Divisional Topper, selected among divisional toppers for participation in the national-level environmental science competition organized by Bangladesh Youth Environmental Initiative.
+- **DCCPS CSE Fest (2025)**: IT Quiz (2nd Place), achieved 2nd place in the Junior IT Quiz competition, demonstrating technical and analytical problem-solving capability.
 - **Web Accessibility (UNICEF Agora, 2025)**: Certified in inclusive WCAG web design principles and navigation equity.
 - **Workplace Communication Essentials (P2E Bangladesh, 2025)**: Leadership and collaborative communication certification.
+- **Manifesto Talk — Youth, Environment & Climate (2025)**: Attended a national youth and climate discussion forum featuring representatives associated with the interim government, focusing on environmental awareness, youth engagement, and future sustainability initiatives.
+

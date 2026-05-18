@@ -30,6 +30,17 @@ export function HighlightsSection({ data }: Readonly<HighlightsSectionProps>) {
             <p style={{ fontSize: "0.85rem", opacity: 0.85, lineHeight: "1.6" }}>
               {data.philosophy}
             </p>
+            <div style={{ marginTop: "1.25rem", paddingTop: "1.25rem", borderTop: "1px solid rgba(230, 237, 243, 0.08)" }}>
+              <h5 style={{ color: "#65d9ce", marginBottom: "0.6rem", fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                Civic &amp; Scientific Engagement
+              </h5>
+              <ul style={{ margin: 0, paddingLeft: "1.15rem", display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+                <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>Physics Olympiad Finalist</li>
+                <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>Earth Olympiad Divisional Topper</li>
+                <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>DCCPS CSE Fest IT Quiz (2nd Place)</li>
+                <li style={{ fontSize: "0.8rem", color: "#c9d1d9", lineHeight: "1.4" }}>Accessibility-Certified Developer (UNICEF Agora)</li>
+              </ul>
+            </div>
           </div>
 
           <div>

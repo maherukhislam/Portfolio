@@ -161,25 +161,18 @@ export const portfolioData = {
     narrativeTitle: "The Narrative",
     timeline: [
       {
-        phase: "Phase 01: Systems Thinking",
-        title: "Builder Mentality",
+        phase: "2024",
+        title: "Systems Foundation & Treasury Operations",
         description:
-          "Naturally thinking in structures and long-term scalability. Preferring to create, implement, organize, and improve active systems over passive participation.",
+          "Initiated organizational digitalization pipelines. Built database sync reporting tools reducing DCCNSC financial audit durations to <1s. Appointed Executive Treasurer of DCCNSC and enlisted in BNCC cadet operations.",
         tone: "teal",
       },
       {
-        phase: "Phase 02: Hybrid Capability",
-        title: "Interdisciplinary Execution",
+        phase: "2025",
+        title: "Scientific Leadership & Civic Engagement",
         description:
-          "Combining engineering interest, leadership, design, communication, organizational thinking, and scientific engagement to build complete, functional digital infrastructure.",
+          "Physics Olympiad National Finalist, DCCPS CSE Fest IT Quiz (2nd Place), and National Earth Olympiad Divisional Topper. Assisted operational coordination for the DCC 34th Annual Cultural Competition and participated in the national Youth & Climate Manifesto Forum.",
         tone: "primary",
-      },
-      {
-        phase: "Phase 03: Mission-Oriented",
-        title: "Long-Term Ambition",
-        description:
-          "Goals consistently involve national contribution, modernization, technology-driven improvement, and creating tools with genuine institutional impact.",
-        tone: "teal",
       },
     ] as const satisfies readonly TimelineItem[],
     quote:
@@ -307,18 +300,25 @@ export const portfolioData = {
     science: [
       {
         icon: "PHY",
-        title: "BDOC Physics Olympiad",
-        meta: "National Finalist / 2025",
+        title: "BDOC Physics Olympiad 2025",
+        meta: "Finalist",
         description:
-          "National-level finalist, indicating deep conceptual understanding, mathematical reasoning, persistence under competition, and analytical scientific aptitude.",
+          "Recognized for performance and analytical excellence in competitive physics.",
       },
       {
         icon: "EAR",
-        title: "National Earth Olympiad",
-        meta: "Divisional Topper / 2025",
+        title: "National Earth Olympiad 2025",
+        meta: "Divisional Topper",
         description:
-          "Recognized as the Divisional Topper by the Bangladesh Youth Environmental Initiative (BYEI), proving mastery in ecological geology, earth sciences, and sustainability.",
+          "Selected among divisional toppers for participation in the national-level environmental science competition organized by Bangladesh Youth Environmental Initiative.",
         metaTone: "blue",
+      },
+      {
+        icon: "IT",
+        title: "DCCPS CSE Fest 2025",
+        meta: "IT Quiz (2nd Place)",
+        description:
+          "Achieved 2nd place in the Junior IT Quiz competition, demonstrating technical and analytical problem-solving capability.",
       },
     ] as const satisfies readonly AwardItem[],
     training: [
@@ -334,6 +334,13 @@ export const portfolioData = {
         meta: "Passport to Earning (P2E) Bangladesh",
         description:
           "Completed professional readiness certification focused on leadership communication, team synergy, logical writing, and executive presence.",
+      },
+      {
+        title: "Manifesto Talk — Youth, Environment & Climate",
+        meta: "Discussion Forum / 2025",
+        description:
+          "Attended a national youth and climate discussion forum featuring representatives associated with the interim government, focusing on environmental awareness, youth engagement, and future sustainability initiatives.",
+        metaTone: "blue",
       },
     ] as const satisfies readonly AwardItem[],
     leadershipLogs: [
@@ -370,9 +377,20 @@ export const portfolioData = {
           "Become Divisional Topper in the National Earth Olympiad, demonstrating deep expertise in earth sciences and sustainability",
           "wrote and presented educational content on ecological geology, climate change, and conservation for student audiences",
           "perticipated in environmental initiatives and workshops to promote sustainability awareness on campus and in the community"
-          
         ],
         icon: "EARTH",
+      },
+      {
+        role: "Cultural Competition Operations Volunteer",
+        organization: "Dhaka Commerce College",
+        period: "2025",
+        impact: "Assisted in operational coordination and event execution during the 34th Annual Cultural Competition.",
+        details: [
+          "Supported crowd control, scheduling alignments, and coordination of stage events during active sessions",
+          "Managed logistical routing for participants, equipment, and guest judges at the venue",
+          "Collaborated directly with college administration to ensure structural event execution guidelines were maintained"
+        ],
+        icon: "OPS",
       }
     ] as const satisfies readonly LeadershipItem[],
   } as const,
