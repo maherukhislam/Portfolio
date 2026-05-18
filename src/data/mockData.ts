@@ -89,13 +89,32 @@ export type ContactLink = Readonly<{
   href: string;
 }>;
 
+export type OperationalTimelineEntry = Readonly<{
+  date: string;
+  event: string;
+  category: string;
+  tone: "teal" | "primary";
+}>;
+
+export type TechStackGroup = Readonly<{
+  category: string;
+  items: readonly string[];
+}>;
+
+export type EngineeringNote = Readonly<{
+  title: string;
+  date: string;
+  excerpt: string;
+  tags: readonly string[];
+}>;
+
 export const portfolioData = {
   navigation: [
     { href: "#projects", label: "Projects" },
     { href: "#education", label: "Education" },
     { href: "#achievements", label: "Credentials" },
+    { href: "#timeline", label: "Timeline" },
     { href: "#skills", label: "Skills" },
-    { href: "#vision", label: "Vision" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Get in Touch", isCta: true },
   ] as const satisfies readonly NavItem[],
@@ -105,7 +124,7 @@ export const portfolioData = {
     title: "Md. Maherukh Islam",
     highlightedText: "Maherukh Islam",
     description:
-      "Engineering-focused student leader passionate about technology, systems, organizational infrastructure, and digital modernization. Combining scientific analytical reasoning, Proper discipline, and accessible technology to build practical infrastructure with real institutional value.",
+      "Student engineer building real digital infrastructure for organizations — web systems, treasury tooling, and accessible interfaces grounded in operational discipline and structured technical practice.",
     primaryAction: { href: "#projects", label: "View Case Studies" },
     secondaryAction: { href: "#achievements", label: "View Credentials" },
     photo: {
@@ -122,32 +141,33 @@ export const portfolioData = {
     statement: "I build digital systems, websites, and organizational infrastructure for student communities and institutions. My work combines technology, leadership, and systems thinking to create practical real-world solutions.",
     philosophy: "I believe technology becomes meaningful when it improves real-world organization, communication, accessibility, and operational efficiency. My work focuses on building practical systems that strengthen communities and institutions.",
     currentMission: [
-      "STEM & Systems Engineering preparation",
-      "Institutional and community digitalization",
-      "Accessibility-first compliant development",
-      "Student organizational support software",
-      "Advanced competitive scientific reasoning"
+      "Accessibility-first frontend systems",
+      "Organizational digital infrastructure",
+      "Engineering preparation & CS fundamentals",
+      "STEM competition training",
+      "Treasury workflow systems",
+      "Web performance optimization"
     ] as const,
     metrics: [
       {
-        value: "Audit: <1s",
-        label: "Treasury Ledger Speed",
-        description: "Replaced 3-day manual spreadsheets with immediate, error-free database synchronization.",
+        value: "< 1s",
+        label: "Treasury Audit Speed",
+        description: "Replaced 3-day manual ledger reviews with sub-second query reports. Python + PLpgSQL pipeline deployed at finance.dccnsc.org.",
       },
       {
-        value: "120+",
-        label: "Digitized Club Members",
-        description: "Developed and managed direct digital ledger records for Dhaka Commerce College Nature Study Club.",
+        value: "316",
+        label: "DCCNSC Production Deploys",
+        description: "Versioned production deployments of the official club portal — CI/CD-backed institutional infrastructure serving 120+ active members.",
       },
       {
-        value: "25+",
-        label: "Modernized Club Pages",
-        description: "Engineered responsive, highly optimized core views and secure administrative portals.",
+        value: "144",
+        label: "Finance System Releases",
+        description: "Production releases of the DCC Nature Study Club Financial Management System at finance.dccnsc.org — active treasury infrastructure.",
       },
       {
-        value: "LCpl Squad",
-        label: "BNCC Squad",
-        description: "Cadet Lance Corporal learning drill coordination, emergency readiness, and platoons.",
+        value: "LCpl",
+        label: "BNCC Rank",
+        description: "Promoted to Cadet Lance Corporal in Bangladesh National Cadet Corps — structured command discipline and operational leadership.",
       }
     ] as const satisfies readonly MetricItem[],
   } as const,
@@ -157,7 +177,7 @@ export const portfolioData = {
     title: "Systems leadership.",
     highlightedText: "Built through evidence.",
     description:
-      "My work sits at the intersection of technical implementation, scientific reasoning, environmental engagement, and organizational responsibility. I am most interested in building systems that make institutions clearer, faster, and more useful.",
+      "My work sits at the intersection of technical implementation, organizational systems, and operational responsibility. I build infrastructure that makes institutions more legible, more efficient, and more useful — grounded in real deployments and structured practice.",
     narrativeTitle: "The Narrative",
     timeline: [
       {
@@ -255,17 +275,18 @@ export const portfolioData = {
       {
         title: "Financial Reporting System",
         description:
-          "An internal tool engineered from treasury experience to streamline financial data processing, reduce reporting friction, and make organizational finance easier to manage.",
+          "A full-stack treasury management platform engineered from direct treasurer experience — structured financial data processing, audit tooling, and secure operational reporting at finance.dccnsc.org.",
         tags: ["Process Organization", "Efficiency"],
         mediaClass: "project__media--code",
         imageUrl: "/finance-preview.png",
+        link: "https://finance.dccnsc.org",
         caseStudy: {
           problem: "Club treasury ledgers were physical or basic spreadsheet files, causing data delays and auditing latencies of up to 3 days.",
           role: "Executive Treasurer & Systems Engineer",
-          solution: "Built a customized secure local database sync utility and financial ledger processing interface.",
+          solution: "Built a full-stack treasury platform with Python data pipelines, PostgreSQL backend, and TypeScript frontend — deployed with 144 production releases.",
           impact: "Eliminated manual ledger errors entirely; reduced institutional financial statement audit duration from 3 days to under 1 second.",
-          technologies: ["PHP", "SQLite", "CSS", "Vite Environment", "Treasury Scripts"],
-          challenges: "Ensuring the interface layout is highly intuitive so that future student treasurers can manage sync operations without DB training.",
+          technologies: ["TypeScript", "JavaScript", "Python", "PLpgSQL / PostgreSQL", "CSS", "Shell Scripts"],
+          challenges: "Ensuring the interface layout is highly intuitive so that future student treasurers can manage sync operations without database training.",
         },
       },
       {
@@ -436,9 +457,9 @@ export const portfolioData = {
     description:
       "A practical capability map across development, design, systems thinking, communication, and the deeper technical specialization I am building next.",
     groups: [
-      { icon: "</>", title: "Web Engineering & CMS", items: ["Tailwind CSS", "HTML & CSS", "PHP & XAMPP", "WordPress Theme Dev", "CMS Customization", "Vercel Deployments", "React & Next.js"] },
-      { icon: "UX", title: "Creative & Copy", items: ["UI/UX Design", "Branding Systems", "Cinematic Presentation", "Immersive UX", "Workplace Communication", "Authentic Writing"] },
-      { icon: "SYS", title: "Systems & Leadership", items: ["Systems Thinking", "Builder Mentality", "Club Treasury Control", "Financial Reporting Systems", "UNICEF Accessibility", "BNCC Command Experience"] },
+      { icon: "</>", title: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Vite", "Semantic HTML5", "Responsive CSS"] },
+      { icon: "DB", title: "CMS & Backend", items: ["WordPress (PHP)", "Python", "PLpgSQL / PostgreSQL", "SQLite", "XAMPP / Local Deploy", "Shell Scripts"] },
+      { icon: "ACC", title: "Engineering Practices", items: ["Accessibility-first design (UNICEF Certified)", "Responsive systems architecture", "Operational UI design", "Web performance optimization", "CI/CD via GitHub Actions"] },
     ] as const satisfies readonly SkillGroup[],
     futureLearning: {
       icon: "AI",
@@ -506,4 +527,48 @@ export const portfolioData = {
       { label: "Resume", href: "#contact" },
     ] as const,
   } as const,
+  techStack: {
+    id: "tech-stack",
+    title: "Technical Stack",
+    groups: [
+      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Vite", "Semantic HTML5"] },
+      { category: "CMS & Backend", items: ["WordPress (PHP)", "Python", "PLpgSQL / PostgreSQL", "SQLite", "XAMPP"] },
+      { category: "Engineering Practices", items: ["Accessibility-first (UNICEF)", "Responsive systems", "Operational UI architecture", "Web performance", "Git / CI-CD"] },
+    ] as const satisfies readonly TechStackGroup[],
+  } as const,
+  operationalTimeline: [
+    { date: "2024", event: "Enrolled in BNCC Cadet Program", category: "Military", tone: "teal" },
+    { date: "2024", event: "Appointed Executive Treasurer, DCC Nature Study Club", category: "Leadership", tone: "primary" },
+    { date: "Dec 2024", event: "UNICEF Web Accessibility Certification (ID: wQE5kUfwA)", category: "Engineering", tone: "teal" },
+    { date: "Dec 2024", event: "Bijoy Quiz — University of Dhaka (Victory Day)", category: "Academic", tone: "primary" },
+    { date: "2025", event: "Physics Olympiad National Finalist (BDOC)", category: "Science", tone: "teal" },
+    { date: "May 2025", event: "ECO Spark Challenge 1.0 — 1st Place Winner", category: "Environment", tone: "primary" },
+    { date: "May 18–19, 2025", event: "DCC CSE Fest IT Quiz — 2nd Place (DCCPS)", category: "Engineering", tone: "teal" },
+    { date: "May 30, 2025", event: "APAC Cyber Hygiene Training (Google.org / SAJIDA Foundation)", category: "Training", tone: "primary" },
+    { date: "May 31, 2025", event: "Youth & Climate Manifesto Forum — Dept. of Environment", category: "Civic", tone: "teal" },
+    { date: "Jun 15, 2025", event: "Workplace Communication — UNICEF Passport to Earning BD", category: "Training", tone: "primary" },
+    { date: "Jul 2025", event: "Earth Olympiad Divisional Topper (BYEI ID: 16353)", category: "Science", tone: "teal" },
+    { date: "2025", event: "Promoted to Cadet Lance Corporal (BNCC)", category: "Military", tone: "primary" },
+    { date: "Nov 5–11, 2025", event: "DCC 34th Annual Cultural Competition Volunteer", category: "Leadership", tone: "teal" },
+  ] as const satisfies readonly OperationalTimelineEntry[],
+  engineeringNotes: [
+    {
+      title: "How I Structured Treasury Reporting",
+      date: "2025-05",
+      excerpt: "Moving from physical ledgers to a Python + PLpgSQL sync pipeline — designing for future treasurers with no database training.",
+      tags: ["Treasury", "PLpgSQL", "Systems Design"],
+    },
+    {
+      title: "Improving Accessibility Focus Systems",
+      date: "2024-12",
+      excerpt: "Applying UNICEF Agora training to real portals — keyboard navigation patterns, focus ring design, and semantic landmark structure.",
+      tags: ["Accessibility", "Frontend", "WCAG"],
+    },
+    {
+      title: "Lessons from Organizational Infrastructure",
+      date: "2025-03",
+      excerpt: "Building dccnsc.org — balancing admin usability, content management, and institutional trust signals in a live club portal.",
+      tags: ["WordPress", "CMS", "Systems Thinking"],
+    },
+  ] as const satisfies readonly EngineeringNote[],
 };

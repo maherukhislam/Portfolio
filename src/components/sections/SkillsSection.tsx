@@ -1,3 +1,5 @@
+import { AccessibilityBlock } from "./AccessibilityBlock";
+
 export interface SkillsSectionProps {
   readonly data: Readonly<{
     id: string;
@@ -25,23 +27,28 @@ export function SkillsSection({ data }: Readonly<SkillsSectionProps>) {
         <p>{data.description}</p>
       </div>
 
-      <div className="card-grid card-grid--three">
+      {/* Three-tier stack breakdown */}
+      <div className="card-grid card-grid--three" style={{ marginBottom: "2rem" }}>
         {data.groups.map((group) => (
           <article key={group.title} className="skill-card panel">
             <div className="skill-card__title">
               <div className="icon-badge">{group.icon}</div>
               <h3>{group.title}</h3>
             </div>
-            <ul className="skill-list">
+            <div className="skill-chip-row">
               {group.items.map((item) => (
-                <li key={item}>{item}</li>
+                <span key={item} className="skill-chip">{item}</span>
               ))}
-            </ul>
+            </div>
           </article>
         ))}
       </div>
 
-      <article className="future-learning panel">
+      {/* Accessibility Engineering block */}
+      <AccessibilityBlock />
+
+      {/* Future specialization */}
+      <article className="future-learning panel" style={{ marginTop: "1rem" }}>
         <div>
           <div className="skill-card__title">
             <div className="icon-badge">{data.futureLearning.icon}</div>
