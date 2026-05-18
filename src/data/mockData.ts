@@ -65,11 +65,11 @@ export const portfolioData = {
   ] as const satisfies readonly NavItem[],
   hero: {
     id: "home",
-    eyebrow: "Student Leader / Systems Builder",
+    eyebrow: "Student Leader & Systems Builder",
     title: "Md. Maherukh Islam",
     highlightedText: "Maherukh Islam",
     description:
-      "A Bangladeshi student innovator combining engineering, science, environmental awareness, accessibility, and organizational leadership to build useful systems for long-term institutional impact.",
+      "A Bangladeshi student leader, developer, and systems-oriented builder combining engineering, technology, science, organizational leadership, environmental awareness, and digital infrastructure development to contribute toward long-term institutional modernization and national impact.",
     primaryAction: { href: "#projects", label: "View Projects" },
     secondaryAction: { href: "#achievements", label: "View Credentials" },
     photo: {
@@ -78,7 +78,7 @@ export const portfolioData = {
       badge: "Systems Leadership",
     },
     visualLabel: "Profile Signal",
-    visualText: "Engineering, scientific competitions, accessibility, environment, and leadership.",
+    visualText: "Engineering, scientific competition, branding, and institutional systems thinking.",
   } as const,
   highlights: {
     eyebrow: "Overview",
@@ -88,7 +88,7 @@ export const portfolioData = {
         icon: "PHY",
         title: "BDOC Physics Olympiad",
         description:
-          "Finalist in 2025, showing strong conceptual reasoning, mathematical thinking, and competitive STEM engagement.",
+          "Finalist in 2025, indicating strong conceptual understanding, mathematical reasoning, persistence under competition, and scientific aptitude.",
         tag: "Finalist",
         tagVariant: "teal",
       },
@@ -96,7 +96,7 @@ export const portfolioData = {
         icon: "EAR",
         title: "National Earth Olympiad",
         description:
-          "Divisional Topper recognition in 2025, connecting science literacy with environmental awareness.",
+          "Divisional Topper in 2025 by Bangladesh Youth Environmental Initiative, reflecting environmental awareness and interdisciplinary interest.",
         tag: "Divisional Topper",
         tagVariant: "teal",
       },
@@ -104,14 +104,14 @@ export const portfolioData = {
         icon: "</>",
         title: "Institutional Builder",
         description:
-          "Building websites, reporting systems, and organized digital workflows for real organizations.",
+          "Developed the DCCNSC website and financial reporting systems, demonstrating real-world implementation ability and organizational management capability.",
         tag: "Systems",
       },
       {
         icon: "A11Y",
-        title: "Inclusive Technology",
+        title: "Leadership & Discipline",
         description:
-          "Trained in web accessibility through UNICEF Agora, with a focus on usability and digital equity.",
+          "Cadet Lance Corporal at BNCC and trained in UNICEF Web Accessibility, focusing on usability, equity, and organizational adaptability.",
         tag: "Accessibility",
       },
     ] as const satisfies readonly HighlightItem[],
@@ -126,24 +126,24 @@ export const portfolioData = {
     narrativeTitle: "The Narrative",
     timeline: [
       {
-        phase: "Phase 01: Inception",
-        title: "Scientific Curiosity",
+        phase: "Phase 01: Systems Thinking",
+        title: "Builder Mentality",
         description:
-          "Physics and earth science competitions strengthened the habit of asking how systems behave, why they fail, and what principles sit underneath visible outcomes. That scientific orientation now supports my engineering direction.",
+          "Naturally thinking in structures and long-term scalability. Preferring to create, implement, organize, and improve active systems over passive participation.",
         tone: "teal",
       },
       {
-        phase: "Phase 02: Execution",
-        title: "Digital Infrastructure",
+        phase: "Phase 02: Hybrid Capability",
+        title: "Interdisciplinary Execution",
         description:
-          "Websites, WordPress systems, reporting workflows, and club operations became practical places to convert structure into working tools. The goal is not only to make things look better, but to make information and processes work better.",
+          "Combining engineering interest, leadership, design, communication, organizational thinking, and scientific engagement to build complete, functional digital infrastructure.",
         tone: "primary",
       },
       {
-        phase: "Phase 03: Direction",
-        title: "Responsible Technology",
+        phase: "Phase 03: Mission-Oriented",
+        title: "Long-Term Ambition",
         description:
-          "Accessibility training, communication development, environmental work, and leadership roles are shaping a broader technical identity: engineering that is inclusive, operationally useful, and aware of civic impact.",
+          "Goals consistently involve national contribution, modernization, technology-driven improvement, and creating tools with genuine institutional impact.",
         tone: "teal",
       },
     ] as const satisfies readonly TimelineItem[],
@@ -255,7 +255,7 @@ export const portfolioData = {
       eyebrow: "Extracurricular",
       title: "Bangladesh National Cadet Corps (BNCC)",
       description:
-        "Served as a Cadet Lance Corporal, building discipline, structured teamwork, leadership, and resilience through national service-oriented training.",
+        "Served as a Cadet Lance Corporal, building discipline, structured teamwork, leadership training, chain-of-command experience, and organizational adaptability.",
       tags: ["Cadet Lance Corporal", "Discipline", "Service"],
     } as const,
   } as const,
@@ -265,15 +265,15 @@ export const portfolioData = {
     description:
       "A practical capability map across development, design, systems thinking, communication, and the deeper technical specialization I am building next.",
     groups: [
-      { icon: "</>", title: "Development", items: ["HTML", "CSS", "React", "Next.js", "PHP", "Tailwind"] },
-      { icon: "UX", title: "Design", items: ["UI/UX", "Branding", "Motion Design"] },
-      { icon: "SYS", title: "Systems & Thinking", items: ["Problem solving", "Organization", "Strategy", "Financial workflows", "Accessibility"] },
+      { icon: "</>", title: "Development", items: ["HTML & CSS", "PHP", "Tailwind CSS", "WordPress CMS", "React", "Next.js"] },
+      { icon: "UX", title: "Design", items: ["UI/UX", "Branding Systems", "Cinematic Presentation", "Storytelling"] },
+      { icon: "SYS", title: "Systems & Thinking", items: ["Systems Thinking", "Builder Mentality", "Mission-Oriented", "Financial workflows", "Accessibility"] },
     ] as const satisfies readonly SkillGroup[],
     futureLearning: {
       icon: "AI",
-      title: "Future Learning",
+      title: "Future Specialization",
       description: "Deepening technical specialization after building a broad interdisciplinary foundation.",
-      tags: ["AI Systems", "Cybersecurity", "Mathematics", "Software Architecture"],
+      tags: ["AI Systems", "Cybersecurity", "Mathematics", "Software Architecture", "Computer Science"],
     } as const,
   } as const,
   vision: {
@@ -323,7 +323,7 @@ export const portfolioData = {
       icon: "CV",
       title: "Professional Dossier",
       description: "Review full academic and professional history.",
-      actionLabel: "Download CV",
+      actionLabel: "View Professional Dossier",
     } as const,
   } as const,
   footer: {
