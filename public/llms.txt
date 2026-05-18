@@ -19,7 +19,7 @@ An engineering-focused student leader passionate about technology, systems devel
 - **Web Engineering & CMS**: React, Next.js, HTML5, CSS3, PHP, MySQL, SQLite, custom WordPress theme engineering, Vite tooling, Vercel/GitHub Pages deployments.
 - **Systems & Architecture**: Database synchronization pipelines, automated financial reporting utilities, ledger speed optimization, high-performance UI layouts.
 - **Leadership & Operations**: Squad drill coordination, platoon logistics, corporate/club treasury control, capital flow oversight, and public speaking.
-- **Accessibility & Compliance**: UNICEF Agora certified in WCAG 2.1 standards, keyboard-navigable UI architecture, high-contrast usability design.
+- **Accessibility, Cybersecurity & Compliance**: UNICEF Agora certified in WCAG 2.1 standards (Verification ID: wQE5kUfwA), APAC Cyber Hygiene certified (supported by Google.org), keyboard-navigational equity, high-contrast usability design.
 
 ---
 
@@ -63,7 +63,8 @@ An engineering-focused student leader passionate about technology, systems devel
 - **Impact**: Promoted divisional ecological awareness, led youth workshops, and presented content on conservation and sustainability.
 
 ### 4. Cultural Competition Operations Volunteer | 34th Annual Cultural Competition (2025)
-- **Impact**: Assisted in operational coordination and event execution during the 34th Annual Cultural Competition organized by Dhaka Commerce College.
+- **Period**: Nov 5 - 11, 2025
+- **Impact**: Awarded Certificate of Appreciation by Dhaka Commerce College (Class XII, Roll S10064) for operational coordination, stage logistics, crowd control, and volunteering service.
 
 ---
 
@@ -80,10 +81,15 @@ An engineering-focused student leader passionate about technology, systems devel
 - **Focus**: Advanced mathematics and logical sciences.
 
 ### Verified Accolades & Civic Forums
-- **BDOC Physics Olympiad (2025)**: National Finalist, recognized for performance and analytical excellence in competitive physics.
-- **National Earth Olympiad (2025)**: Divisional Topper, selected among divisional toppers for participation in the national-level environmental science competition organized by Bangladesh Youth Environmental Initiative.
-- **DCCPS CSE Fest (2025)**: IT Quiz (2nd Place), achieved 2nd place in the Junior IT Quiz competition, demonstrating technical and analytical problem-solving capability.
-- **Web Accessibility (UNICEF Agora, 2025)**: Certified in inclusive WCAG web design principles and navigation equity.
-- **Workplace Communication Essentials (P2E Bangladesh, 2025)**: Leadership and collaborative communication certification.
-- **Manifesto Talk — Youth, Environment & Climate (2025)**: Attended a national youth and climate discussion forum featuring representatives associated with the interim government, focusing on environmental awareness, youth engagement, and future sustainability initiatives.
+- **BDOC Physics Olympiad (2025)**: National Finalist, awarded Certificate of Achievement by Bangladesh Olympiad Challenge (BDOC) for conceptual and analytical excellence in competitive physics.
+- **National Earth Olympiad (2025)**: Divisional Topper, selected among divisional toppers by Bangladesh Youth Environmental Initiative (BYEI) for national competition. Participation ID: 16353 (July 2025).
+- **ECO Spark Challenge 1.0 (2025)**: First Place (1st Place) Winner, awarded Certificate of Excellence in Quiz Competition by Dhaka Commerce College Nature Study Club.
+- **DCC Intra College CSE Fest (2025)**: Junior IT Quiz (2nd Place), held May 18-19, 2025, organized by Dhaka Commerce College Programming Society (DCCPS).
+- **1st DCCSC Online Quiz (2025)**: Achievement Winner, awarded Certificate of Achievement in online quiz segment by Dhaka Commerce College Science Club.
+- **Bijoy Quiz Competition (2024)**: Participation Certificate from Shahid Sergeant Zahurul Huq Hall Quiz Club, University of Dhaka, held on December 16, 2024.
+- **Environment Quiz Olympiad (2024)**: Participation Certificate from Dhaka Commerce College Nature Study Club, held on November 19, 2024.
+- **Web Accessibility Training (UNICEF Agora, 2024)**: Completed comprehensive WCAG inclusive web design and navigation equity training. Verification ID: wQE5kUfwA (December 26, 2024).
+- **Cyber Hygiene Training (APAC Cybersecurity Fund, 2025)**: Completed training jointly organized by The Asia Foundation and SAJIDA Foundation, supported by Google.org, CyberPeace Institute, and Global Cyber Alliance (May 30, 2025).
+- **Workplace Communication Essentials (UNICEF P2E Bangladesh, 2025)**: Professional readiness and leadership communication training by UNICEF Passport to Earning Bangladesh & Wadhwani Foundation (June 15, 2025).
+- **Manifesto Talk — Youth, Environment & Climate (2025)**: Certificate of Participation in national youth and climate forum at Department of Environment, focusing on climate action and youth advocacy (May 31st, 2025).
 
