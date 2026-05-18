@@ -71,6 +71,11 @@ export const portfolioData = {
       "Multidisciplinary student innovator building meaningful digital systems and preparing for a future in engineering, technology, and impactful innovation.",
     primaryAction: { href: "#projects", label: "View Projects" },
     secondaryAction: { href: "#about", label: "About Me" },
+    photo: {
+      fileName: "profile-photo.jpg",
+      alt: "Portrait of Maherukh Islam",
+      badge: "Student Innovator",
+    },
     visualLabel: "Innovation Lab",
     visualText: "Systems, research, and engineered products.",
   } as const,

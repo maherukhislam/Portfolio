@@ -7,6 +7,11 @@ export interface HeroSectionProps {
     description: string;
     primaryAction: Readonly<{ href: string; label: string }>;
     secondaryAction: Readonly<{ href: string; label: string }>;
+    photo: Readonly<{
+      fileName: string;
+      alt: string;
+      badge: string;
+    }>;
     visualLabel: string;
     visualText: string;
   }>;
@@ -14,6 +19,7 @@ export interface HeroSectionProps {
 
 export function HeroSection({ data }: Readonly<HeroSectionProps>) {
   const [introText, endingText] = data.title.split(data.highlightedText);
+  const photoSrc = `${import.meta.env.BASE_URL}${data.photo.fileName}`;
 
   return (
     <section className="hero shell section" id={data.id}>
@@ -37,10 +43,13 @@ export function HeroSection({ data }: Readonly<HeroSectionProps>) {
 
       <div className="hero__visual panel">
         <div className="hero__visual-top">
-          <div className="beam beam--1" />
-          <div className="beam beam--2" />
-          <div className="beam beam--3" />
-          <div className="beam beam--4" />
+          <img
+            className="hero__photo"
+            src={photoSrc}
+            alt={data.photo.alt}
+          />
+          <div className="hero__photo-glow" />
+          <div className="hero__photo-badge">{data.photo.badge}</div>
         </div>
         <div className="hero__visual-bottom">
           <div className="hero__visual-badge">
