@@ -125,6 +125,7 @@ textarea {
   background: linear-gradient(90deg, rgba(101, 217, 206, 0.25) 0%, rgba(148, 163, 255, 0.25) 50%, transparent 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
 }
@@ -291,6 +292,7 @@ textarea {
   background: linear-gradient(135deg, var(--teal) 0%, #a2ffd7 50%, var(--primary) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textGradientPulse 4s ease infinite;
 }
@@ -325,11 +327,11 @@ textarea {
 .contact-side {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero__actions {
   margin-top: 2rem;
-  flex-wrap: wrap;
 }
 
 .panel,
@@ -361,6 +363,7 @@ textarea {
   background: linear-gradient(180deg, rgba(101, 217, 206, 0.18), transparent 60%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
   opacity: 0.8;
@@ -1648,6 +1651,7 @@ textarea {
   border-radius: 8px;
   font-family: 'Fira Code', 'Courier New', monospace;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
 }
 
 .git-matrix__header {
@@ -1659,6 +1663,7 @@ textarea {
   color: #65d9ce;
   border-bottom: 1px solid rgba(101, 217, 206, 0.1);
   padding-bottom: 0.5rem;
+  min-width: 400px;
 }
 
 .git-matrix__calendar {
@@ -1666,6 +1671,7 @@ textarea {
   grid-template-columns: repeat(28, 1fr);
   gap: 4px;
   margin-bottom: 1rem;
+  min-width: 420px;
 }
 
 .git-matrix__cell {
@@ -1693,6 +1699,7 @@ textarea {
   color: #8b949e;
   padding-top: 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
+  min-width: 420px;
 }
 
 .git-matrix__legend {
