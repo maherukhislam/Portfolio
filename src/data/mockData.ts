@@ -432,7 +432,7 @@ export const portfolioData = {
       "Whether you have a collaboration idea, institutional project, research opportunity, or technology proposal, my inbox is open.",
     links: [
       { label: "Email", value: "maherukhislam2007@gmail.com", href: "mailto:maherukhislam2007@gmail.com" },
-      { label: "GitHub", value: "github.com/maherukh", href: "https://github.com/maherukh" },
+      { label: "GitHub", value: "github.com/maherukhislam", href: "https://github.com/maherukhislam" },
       { label: "LinkedIn", value: "in/md-maherukh-islam", href: "https://www.linkedin.com/in/md-maherukh-islam/" },
       { label: "Facebook", value: "fb.com/Maherukhislamastha", href: "https://www.facebook.com/Maherukhislamastha" },
     ] as const satisfies readonly ContactLink[],
@@ -448,7 +448,7 @@ export const portfolioData = {
     tagline: "(c) 2026 Maherukh Islam. Engineered for Innovation.",
     links: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/md-maherukh-islam/" },
-      { label: "GitHub", href: "https://github.com/maherukh" },
+      { label: "GitHub", href: "https://github.com/maherukhislam" },
       { label: "Resume", href: "#contact" },
     ] as const,
   } as const,
