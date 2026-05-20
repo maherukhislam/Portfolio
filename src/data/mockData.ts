@@ -570,5 +570,35 @@ export const portfolioData = {
       excerpt: "Building dccnsc.org - balancing admin usability, content management, and institutional trust signals in a live club portal.",
       tags: ["WordPress", "CMS", "Systems Thinking"],
     },
+    {
+      title: "Rooppur Loads Its Fuel: What Today Actually Means for Bangladesh",
+      date: "2026",
+      excerpt: "An analysis of the Rooppur Nuclear Power Plant loading its fuel and its broader implications for Bangladesh's infrastructure and energy sector.",
+      tags: ["Energy", "Nuclear Power", "Infrastructure", "Analysis"],
+    },
+    {
+      title: "El Niño and Bangladesh Summer 2026",
+      date: "2026",
+      excerpt: "A report analyzing the transition to El Niño conditions expected around May–July 2026, highlighting key risks for Bangladesh including severe heatwaves and threats to food security.",
+      tags: ["Environment", "Climate Science", "El Niño"],
+    },
+    {
+      title: "The Virus the World Just Noticed - And Why Bangladesh Should Pay Attention",
+      date: "2026-05",
+      excerpt: "Discussing the biology and epidemiological risks of Hantaviruses, emphasizing why dense, rodent-heavy urban environments in Bangladesh should be prepared for potential outbreaks.",
+      tags: ["Biology", "Epidemiology", "Public Health"],
+    },
+    {
+      title: "Environmental Comfort as a Growth Strategy: Lessons from the Global South and Bangladesh",
+      date: "2026",
+      excerpt: "An analysis of environmental comfort as a strategy for sustainable growth, drawing lessons from the Global South and applying them to Bangladesh.",
+      tags: ["Environment", "Sustainability", "Growth Strategy"],
+    },
+    {
+      title: "The April 26 Rainfall: A Scientific Autopsy of Dhaka's AQI Plunge",
+      date: "2026",
+      excerpt: "A scientific breakdown of the April 26 rainfall event and its direct impact on causing a sudden plunge in Dhaka's Air Quality Index.",
+      tags: ["Climate Science", "AQI", "Environmental Analysis"],
+    },
   ] as const satisfies readonly EngineeringNote[],
 };
