@@ -114,6 +114,7 @@ export const portfolioData = {
     { href: "#education", label: "Education" },
     { href: "#achievements", label: "Credentials" },
     { href: "#timeline", label: "Timeline" },
+    { href: "#notes", label: "Insights" },
     { href: "#skills", label: "Skills" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Get in Touch", isCta: true },

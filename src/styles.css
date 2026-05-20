@@ -91,11 +91,29 @@ textarea {
   margin: 0 auto;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--teal));
+  width: 0%;
+  transition: width 80ms ease-out;
+  box-shadow: 0 0 10px rgba(101, 217, 206, 0.4);
+  z-index: 100;
+}
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   padding: 1.25rem 0 0;
+  transition: padding 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header--scrolled {
+  padding: 0.5rem 0 0;
 }
 
 .nav {
@@ -111,9 +129,17 @@ textarea {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   position: relative;
   transition:
+    padding 280ms cubic-bezier(0.16, 1, 0.3, 1),
     transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
     background 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header--scrolled .nav {
+  padding: 0.55rem 1.5rem;
+  background: rgba(6, 8, 18, 0.88);
+  border-color: rgba(101, 217, 206, 0.22);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.65);
 }
 
 .nav::before {
@@ -370,6 +396,32 @@ textarea {
   transition: opacity 350ms ease, background 350ms ease;
 }
 
+/* Spotlight Border Glow on Hover */
+.panel::after,
+.feature-card::after,
+.skill-card::after,
+.contact-form::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(101, 217, 206, 0.35),
+    rgba(148, 163, 255, 0.12) 40%,
+    transparent 80%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
 .feature-card:hover,
 .skill-card:hover,
 .project:hover,
@@ -383,6 +435,13 @@ textarea {
   border-color: rgba(101, 217, 206, 0.35);
   box-shadow: 0 24px 60px rgba(101, 217, 206, 0.08);
   background: linear-gradient(180deg, rgba(6, 12, 28, 0.65) 0%, rgba(10, 12, 22, 0.75) 100%);
+}
+
+.panel:hover::after,
+.feature-card:hover::after,
+.skill-card:hover::after,
+.contact-form:hover::after {
+  opacity: 1;
 }
 
 .feature-card:hover::before,
@@ -1976,7 +2035,19 @@ textarea {
   grid-template-columns: 1fr 3rem 1fr;
   align-items: start;
   padding: 0.65rem 0;
-  animation: riseIn 500ms cubic-bezier(0.2,0.8,0.2,1) both;
+}
+
+@media (min-width: 701px) {
+  .op-timeline__entry--left.motion-reveal {
+    transform: translateX(-40px) scale(0.985);
+  }
+  .op-timeline__entry--right.motion-reveal {
+    transform: translateX(40px) scale(0.985);
+  }
+  .op-timeline__entry--left.motion-reveal.is-visible,
+  .op-timeline__entry--right.motion-reveal.is-visible {
+    transform: translateX(0) scale(1);
+  }
 }
 .op-timeline__entry--left .op-timeline__card {
   grid-column: 1; grid-row: 1;
@@ -2038,4 +2109,484 @@ textarea {
   .op-timeline__entry--left .op-timeline__meta { justify-content: flex-start; }
   .deploy-stat__divider { display: none; }
   .deploy-stats { gap: 1.25rem; }
+}
+
+/* ==========================================================================
+   Achievements & Projects Tab Layouts
+   ========================================================================== */
+.achievements-tabs-container,
+.projects-content-container {
+  margin-top: 2rem;
+}
+
+.achievements-tabs-nav,
+.projects-filter-nav {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(6, 8, 18, 0.4);
+  border: 1px solid rgba(101, 217, 206, 0.08);
+  padding: 0.35rem;
+  border-radius: 999px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 3rem;
+  backdrop-filter: blur(12px);
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.achievements-tabs-nav::-webkit-scrollbar,
+.projects-filter-nav::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.achievements-tab-btn,
+.projects-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.achievements-tab-btn:hover,
+.projects-filter-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.achievements-tab-btn.is-active,
+.projects-filter-btn.is-active {
+  color: var(--text);
+  background: rgba(101, 217, 206, 0.09);
+  border-color: rgba(101, 217, 206, 0.25);
+  box-shadow: 0 4px 20px rgba(101, 217, 206, 0.06);
+}
+
+.tab-number {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--teal);
+  opacity: 0.85;
+}
+
+/* Tab Panel Fade In */
+.tab-panel {
+  will-change: opacity, transform;
+}
+
+.animate-fade-in {
+  animation: tabFadeIn 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-tabs-nav,
+  .projects-filter-nav {
+    width: 100%;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .achievements-tab-btn,
+  .projects-filter-btn {
+    border-radius: 8px;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Engineering Notes Section
+   ========================================================================== */
+.engineering-notes {
+  position: relative;
+}
+
+.notes-controls {
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.notes-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.notes-search-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.5rem;
+  border-radius: 8px;
+  background: rgba(6, 8, 18, 0.5);
+  border: 1px solid rgba(101, 217, 206, 0.12);
+  color: var(--text);
+  font-family: "Sora", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.notes-search-input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 12px rgba(101, 217, 206, 0.15);
+}
+
+.notes-search-clear {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: color 200ms ease;
+}
+
+.notes-search-clear:hover {
+  color: var(--text);
+}
+
+.notes-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.notes-tag-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: "Sora", sans-serif;
+  font-weight: 500;
+  transition: all 200ms ease;
+}
+
+.notes-tag-btn:hover {
+  color: var(--text);
+  border-color: rgba(101, 217, 206, 0.2);
+  background: rgba(101, 217, 206, 0.04);
+}
+
+.notes-tag-btn.is-active {
+  color: var(--text);
+  background: rgba(101, 217, 206, 0.12);
+  border-color: var(--teal);
+  box-shadow: 0 2px 10px rgba(101, 217, 206, 0.08);
+}
+
+/* Note Cards Styling */
+.note-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 280px;
+}
+
+.note-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-card__date {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.note-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0;
+  flex-grow: 0;
+}
+
+.note-card__excerpt {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.note-card__footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.85rem;
+}
+
+.note-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.note-card__tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  color: var(--teal);
+  background: rgba(101, 217, 206, 0.06);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.note-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--teal);
+  font-size: 0.85rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: gap 200ms ease, color 200ms ease;
+}
+
+.note-card__btn span {
+  transition: transform 200ms ease;
+}
+
+.note-card__btn:hover {
+  color: var(--text);
+}
+
+.note-card__btn:hover span {
+  transform: translateX(4px);
+}
+
+.notes-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Modal Reading overlay */
+.notes-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 5, 12, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.notes-modal-card {
+  width: min(100%, 780px);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem;
+  background: linear-gradient(180deg, rgba(6, 12, 28, 0.8) 0%, rgba(10, 12, 22, 0.9) 100%);
+  border: 1px solid rgba(101, 217, 206, 0.2);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.notes-modal-close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 200ms ease;
+  z-index: 10;
+}
+
+.notes-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  transform: rotate(90deg);
+}
+
+.notes-modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.notes-modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+  padding-right: 2rem;
+}
+
+.notes-modal-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.notes-modal-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(101, 217, 206, 0.25), transparent);
+  margin-top: 1.25rem;
+}
+
+.notes-modal-body {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Custom scrollbar for modal details */
+.notes-modal-body::-webkit-scrollbar {
+  width: 4px;
+}
+.notes-modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.notes-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(101, 217, 206, 0.25);
+  border-radius: 2px;
+}
+
+.notes-modal-excerpt {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 1.75rem 0;
+  border-left: 2px solid var(--teal);
+  padding-left: 1rem;
+}
+
+.notes-modal-markdown {
+  color: #c9d1d9;
+  line-height: 1.65;
+  font-size: 0.92rem;
+}
+
+.notes-modal-markdown h3 {
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.75rem;
+}
+
+.notes-modal-markdown h4 {
+  color: var(--teal);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.notes-modal-markdown p {
+  margin: 0 0 1rem 0;
+}
+
+.notes-modal-markdown ul {
+  margin: 0 0 1.25rem 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.notes-modal-markdown li {
+  line-height: 1.55;
+}
+
+.notes-modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.animate-modal-in {
+  animation: modalScaleIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .notes-controls {
+    padding: 1.25rem;
+  }
+  .notes-modal-card {
+    padding: 1.5rem;
+    max-height: 90vh;
+  }
+  .notes-modal-title {
+    font-size: 1.35rem;
+  }
 }

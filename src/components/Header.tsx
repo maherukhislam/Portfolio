@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import type { NavItem } from "../data/mockData";
 
 export interface HeaderProps {
@@ -15,9 +16,45 @@ export function Header({
   onCloseMenu,
   onToggleMenu,
 }: Readonly<HeaderProps>) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const progressBarRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      const progressBar = progressBarRef.current;
+      if (progressBar) {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+        progressBar.style.width = `${scrolled}%`;
+        progressBar.setAttribute("aria-valuenow", Math.round(scrolled).toString());
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="site-header">
-      <a href="#operational-focus" className="skip-to-content">
+    <header className={`site-header${isScrolled ? " site-header--scrolled" : ""}`}>
+      <div
+        ref={progressBarRef}
+        className="scroll-progress-bar"
+        role="progressbar"
+        aria-label="Scroll progress indicator"
+        aria-valuenow={0}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      />
+      <a href="#projects" className="skip-to-content">
         Skip to main content
       </a>
       <nav className="nav shell" aria-label="Primary">

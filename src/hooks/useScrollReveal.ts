@@ -9,6 +9,8 @@ const revealSelector = [
   ".project",
   ".placeholder-card",
   ".timeline__item",
+  ".op-timeline__entry",
+  ".note-card",
   ".quote-panel",
   ".future-learning",
   ".manifesto",

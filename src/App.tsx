@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { AboutSection } from "./components/sections/AboutSection";
 import { AchievementsSection } from "./components/sections/AchievementsSection";
 import { EducationSection } from "./components/sections/EducationSection";
+import { EngineeringNotesSection } from "./components/sections/EngineeringNotesSection";
 import { HeroSection } from "./components/sections/HeroSection";
 import { HighlightsSection } from "./components/sections/HighlightsSection";
 import { OperationalTimelineSection } from "./components/sections/OperationalTimelineSection";
@@ -16,12 +17,14 @@ import { portfolioData } from "./data/mockData";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useMobileNav } from "./hooks/useMobileNav";
 import { useScrollReveal } from "./hooks/useScrollReveal";
+import { useSpotlight } from "./hooks/useSpotlight";
 
 function App() {
-  const sectionIds = ["home", "projects", "education", "achievements", "timeline", "skills", "vision", "about", "contact"];
+  const sectionIds = ["home", "projects", "education", "achievements", "timeline", "notes", "skills", "vision", "about", "contact"];
   const activeSection = useActiveSection(sectionIds);
   const { isOpen, closeMenu, toggleMenu } = useMobileNav();
   useScrollReveal();
+  useSpotlight();
 
   return (
     <>
@@ -42,6 +45,7 @@ function App() {
         <EducationSection data={portfolioData.education} />
         <AchievementsSection data={portfolioData.achievements} />
         <OperationalTimelineSection entries={portfolioData.operationalTimeline} />
+        <EngineeringNotesSection data={portfolioData.engineeringNotes} id="notes" />
         <SkillsSection data={portfolioData.skills} />
         <VisionSection data={portfolioData.vision} />
         <ContactSection data={portfolioData.contact} />

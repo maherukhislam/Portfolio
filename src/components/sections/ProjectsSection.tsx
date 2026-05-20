@@ -136,6 +136,8 @@ function ProjectCaseStudy({ caseStudy }: { caseStudy: CaseStudy }) {
 }
 
 export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
+  const [filter, setFilter] = useState<"all" | "systems" | "themes" | "dev">("all");
+
   return (
     <section className="shell section projects" id={data.id}>
       <SectionHeading
@@ -145,61 +147,177 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
         description={data.description}
       />
 
-      <article className="project project--featured panel">
-        <ProjectMedia imageUrl={data.featured.imageUrl} mediaClass={data.featured.mediaClass} />
-        <div className="project__body">
-          <TagRow tags={data.featured.tags} tealIndexes={[2]} />
-          <h3>
-            {data.featured.link ? (
-              <a href={data.featured.link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${data.featured.title} (Opens in new tab)`}>
-                {data.featured.title} <span className="project__link-arrow">↗</span>
-              </a>
-            ) : (
-              data.featured.title
-            )}
-          </h3>
-          <p>{data.featured.description}</p>
-          {data.featured.caseStudy ? <ProjectCaseStudy caseStudy={data.featured.caseStudy} /> : null}
-        </div>
-      </article>
+      {/* Dynamic Projects Filter bar */}
+      <div className="projects-filter-nav" role="tablist" aria-label="Projects Filter">
+        <button
+          className={`projects-filter-btn ${filter === "all" ? "is-active" : ""}`}
+          onClick={() => setFilter("all")}
+          role="tab"
+          aria-selected={filter === "all"}
+        >
+          All Work
+        </button>
+        <button
+          className={`projects-filter-btn ${filter === "systems" ? "is-active" : ""}`}
+          onClick={() => setFilter("systems")}
+          role="tab"
+          aria-selected={filter === "systems"}
+        >
+          Web Infrastructure
+        </button>
+        <button
+          className={`projects-filter-btn ${filter === "themes" ? "is-active" : ""}`}
+          onClick={() => setFilter("themes")}
+          role="tab"
+          aria-selected={filter === "themes"}
+        >
+          Frontend &amp; Themes
+        </button>
+        <button
+          className={`projects-filter-btn ${filter === "dev" ? "is-active" : ""}`}
+          onClick={() => setFilter("dev")}
+          role="tab"
+          aria-selected={filter === "dev"}
+        >
+          In Development
+        </button>
+      </div>
 
-      <div className="project-grid">
-        {data.secondary.map((project, index) => (
-          <article key={project.title} className="project panel">
-            {project.mediaClass ? (
-              <ProjectMedia imageUrl={project.imageUrl} mediaClass={project.mediaClass} />
-            ) : null}
-            <div className={`project__body${index === 1 ? " project__body--centered" : ""}`}>
-              {index === 1 ? <div className="icon-badge icon-badge--large" aria-hidden="true">&lt;&gt;</div> : null}
-              <TagRow tags={project.tags} tealIndexes={project.variant === "teal" ? [0] : []} />
-              <h3>
-                {project.link ? (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${project.title} (Opens in new tab)`}>
-                    {project.title} <span className="project__link-arrow">↗</span>
-                  </a>
-                ) : (
-                  project.title
-                )}
-              </h3>
-              <p>{project.description}</p>
-              {project.caseStudy ? <ProjectCaseStudy caseStudy={project.caseStudy} /> : null}
+      <div className="projects-content-container">
+        {filter === "all" && (
+          <div className="tab-panel animate-fade-in">
+            <article className="project project--featured panel">
+              <ProjectMedia imageUrl={data.featured.imageUrl} mediaClass={data.featured.mediaClass} />
+              <div className="project__body">
+                <TagRow tags={data.featured.tags} tealIndexes={[2]} />
+                <h3>
+                  {data.featured.link ? (
+                    <a href={data.featured.link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${data.featured.title} (Opens in new tab)`}>
+                      {data.featured.title} <span className="project__link-arrow">↗</span>
+                    </a>
+                  ) : (
+                    data.featured.title
+                  )}
+                </h3>
+                <p>{data.featured.description}</p>
+                {data.featured.caseStudy ? <ProjectCaseStudy caseStudy={data.featured.caseStudy} /> : null}
+              </div>
+            </article>
+
+            <div className="project-grid">
+              {data.secondary.map((project, index) => (
+                <article key={project.title} className="project panel">
+                  {project.mediaClass ? (
+                    <ProjectMedia imageUrl={project.imageUrl} mediaClass={project.mediaClass} />
+                  ) : null}
+                  <div className={`project__body${index === 1 ? " project__body--centered" : ""}`}>
+                    {index === 1 ? <div className="icon-badge icon-badge--large" aria-hidden="true">&lt;&gt;</div> : null}
+                    <TagRow tags={project.tags} tealIndexes={project.variant === "teal" ? [0] : []} />
+                    <h3>
+                      {project.link ? (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${project.title} (Opens in new tab)`}>
+                          {project.title} <span className="project__link-arrow">↗</span>
+                        </a>
+                      ) : (
+                        project.title
+                      )}
+                    </h3>
+                    <p>{project.description}</p>
+                    {project.caseStudy ? <ProjectCaseStudy caseStudy={project.caseStudy} /> : null}
+                  </div>
+                </article>
+              ))}
             </div>
-          </article>
-        ))}
-      </div>
 
-      <div className="section-heading section-heading--compact">
-        <h3>{data.loadingTitle}</h3>
-      </div>
+            <div className="section-heading section-heading--compact">
+              <h3>{data.loadingTitle}</h3>
+            </div>
 
-      <div className="card-grid card-grid--three">
-        {data.loadingItems.map((item) => (
-          <article key={item.title} className="placeholder-card panel">
-            <div className="icon-badge" aria-hidden="true">{item.icon}</div>
-            <h4>{item.title}</h4>
-            <p>{item.description}</p>
-          </article>
-        ))}
+            <div className="card-grid card-grid--three">
+              {data.loadingItems.map((item) => (
+                <article key={item.title} className="placeholder-card panel">
+                  <div className="icon-badge" aria-hidden="true">{item.icon}</div>
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {filter === "systems" && (
+          <div className="tab-panel animate-fade-in card-grid card-grid--two">
+            <article className="project panel">
+              <ProjectMedia imageUrl={data.featured.imageUrl} mediaClass={data.featured.mediaClass} />
+              <div className="project__body">
+                <TagRow tags={data.featured.tags} tealIndexes={[2]} />
+                <h3>
+                  {data.featured.link ? (
+                    <a href={data.featured.link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${data.featured.title} (Opens in new tab)`}>
+                      {data.featured.title} <span className="project__link-arrow">↗</span>
+                    </a>
+                  ) : (
+                    data.featured.title
+                  )}
+                </h3>
+                <p>{data.featured.description}</p>
+                {data.featured.caseStudy ? <ProjectCaseStudy caseStudy={data.featured.caseStudy} /> : null}
+              </div>
+            </article>
+
+            <article className="project panel">
+              <ProjectMedia imageUrl={data.secondary[0].imageUrl} mediaClass={data.secondary[0].mediaClass} />
+              <div className="project__body">
+                <TagRow tags={data.secondary[0].tags} tealIndexes={[]} />
+                <h3>
+                  {data.secondary[0].link ? (
+                    <a href={data.secondary[0].link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${data.secondary[0].title} (Opens in new tab)`}>
+                      {data.secondary[0].title} <span className="project__link-arrow">↗</span>
+                    </a>
+                  ) : (
+                    data.secondary[0].title
+                  )}
+                </h3>
+                <p>{data.secondary[0].description}</p>
+                {data.secondary[0].caseStudy ? <ProjectCaseStudy caseStudy={data.secondary[0].caseStudy} /> : null}
+              </div>
+            </article>
+          </div>
+        )}
+
+        {filter === "themes" && (
+          <div className="tab-panel animate-fade-in">
+            <article className="project panel">
+              <div className="project__body" style={{ minHeight: "auto" }}>
+                <div className="icon-badge icon-badge--large" aria-hidden="true">&lt;&gt;</div>
+                <TagRow tags={data.secondary[1].tags} tealIndexes={[0]} />
+                <h3>
+                  {data.secondary[1].link ? (
+                    <a href={data.secondary[1].link} target="_blank" rel="noopener noreferrer" className="project__link-hover" aria-label={`${data.secondary[1].title} (Opens in new tab)`}>
+                      {data.secondary[1].title} <span className="project__link-arrow">↗</span>
+                    </a>
+                  ) : (
+                    data.secondary[1].title
+                  )}
+                </h3>
+                <p>{data.secondary[1].description}</p>
+                {data.secondary[1].caseStudy ? <ProjectCaseStudy caseStudy={data.secondary[1].caseStudy} /> : null}
+              </div>
+            </article>
+          </div>
+        )}
+
+        {filter === "dev" && (
+          <div className="tab-panel animate-fade-in card-grid card-grid--three">
+            {data.loadingItems.map((item) => (
+              <article key={item.title} className="placeholder-card panel">
+                <div className="icon-badge" aria-hidden="true">{item.icon}</div>
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
